@@ -852,7 +852,8 @@ function min14(){
 
 function addTotal(){
   let totalBelanja = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
-    if(totalBelanja < 100){
+   
+  if(totalBelanja < 100){
       let paneltotalya = document.getElementById('paneltotalya');
       paneltotalya.style.display= "none";
       alert("MINIMAL ORDER 100K DULU YA")
@@ -874,6 +875,7 @@ function addTotal(){
     let nama = document.getElementById('nama').value;
     let alamat =document.getElementById('alamat').value;
     let nomer = document.getElementById('nomer').value;
+    
   
     validasiNomer = /^08\d{9,10}$/; 
 
@@ -944,9 +946,19 @@ else{
 
 }
 
+
 function submit1(){
+  let totalBelanja5 = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
+
+  let hitungHasilDsikon1 = totalBelanja5 * (getDiskon/100);
+  let hasilfix1 = totalBelanja5 - hitungHasilDsikon1; 
+  
+  
+  let nama = document.getElementById('nama').value;
+  let alamat =document.getElementById('alamat').value;
+  let nomer = document.getElementById('nomer').value;
   const number = "6281399549218"
-   let pesan =  `halo ${nama}  Total Pesanan Anda RP.${totalBelanja}.000 Dan Dapat DiskonTotal Menjadi Rp000`
+   let pesan =  `halo ${nama} alamt anda${alamat} dan Total Pesanan Anda Rp${totalBelanja5}.000 Dan Dapat Diskon${getDiskon} total di bayarkan menjadi Rp.000${hasilfix1}`
   const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
   window.open(linkWA, '_blank');
 }
