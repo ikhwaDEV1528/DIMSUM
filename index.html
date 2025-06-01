@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <title>Document</title>
+
+  <style>
+    body{
+      background-color:rgb(239, 239, 220);
+      
+    }
+
+    .imgUtama img{
+      width: 400px;
+      height: 400px;
+      transform: translateX(1000px)translateY(160px);
+
+    }
+
+
+    .selogan{
+      background-color: rgb(224, 224, 183);
+      font-family: Arial, Helvetica, sans-serif;
+ 
+      width: 240px;
+      height: 20px;
+      border-radius: 20PX;
+      gap:10px;
+      transform: translateY(-80px) translateX(120px);
+    }
+
+
+
+    .kalimat{
+      transform: translateY(-240px) translateX(30px);
+    }
+
+    .kalimat img{
+      width: 500px;
+      height: 400px;
+    }
+
+    .p1{
+      transform: translateY(-1px);
+      font-weight: 100;
+      font-size: 14px;
+    }
+
+    .kalimat button{
+      background-color: orange;
+      padding: 35px;
+      border-radius: 10px;
+      color: aliceblue;
+      transform: translateX(-10px);
+      filter: drop-shadow(5px 5px 5px black);
+      margin-right: 20px;
+      font-size: 23px;
+    }
+
+    .see{
+      width: 50px;
+      height:100px;
+      width: 130px;
+      font-size: 8px;
+      transform: translateY(28px)translateX(-10px) !important;
+    }
+
+   .panelMenu{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(229, 200, 168);
+    border-radius:20px;
+    position: relative;
+    z-index: 1;
+    transform: translateY(-900px)translateX(280px);
+  
+    width: 800px;
+    height: 600px;
+     overflow-y:auto;
+   }
+
+.kalimatMenuDaftar{
+  display: block;
+  justify-content: center;
+
+}
+
+.pmenu{
+  transform: translateX(290px);
+}
+
+.h3menu{
+  transform: translateY(10px) translateX(270px);
+}
+
+.imgmenu img{
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  
+}
+
+.imgmenu{
+  display: block;
+
+  justify-content: center;
+  flex-direction: column;
+}
+
+.indukimg{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+   transform: translateY(50px);
+  flex-wrap: wrap;
+}
+
+.indukimg p{
+ transform: translateX(20px);
+}
+
+.buttonpaneltutup{
+  transform: translateY(-580px) translateX(30px);
+
+ position: absolute;
+  border-radius: 10px;
+  padding: 5px;
+  background-color:orange;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.paneldiskon{
+  position: absolute;
+  z-index: 100;
+  background-color: rgb(229, 207, 166);
+  top: 20%;
+  left: 30%;
+  width: 500px;
+  height: 500px;
+  border-radius:30px;
+  display: none;
+}
+
+.paneldiskon p{
+  background-color: rgb(226, 183, 129);
+  border-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding:10px;
+}
+
+.closediskon{
+  transform: translateY(180px)translateX(220px);
+  border-radius: 10px;
+  background-color: orange;
+  color: black;
+}
+
+.indukpesanmenu{
+display: flex;
+justify-content: center;
+
+align-items: center;
+flex-wrap:wrap;
+position: relative;
+background-color: none;
+
+width: 1500px;
+height: 1000px;
+gap: 130px;
+}
+
+.pesanmenu{
+  transform: translateY(-10px);
+  background-color: rgb(225, 210, 190); /* #e1d2be */
+  height: 200px;
+   border-radius: 10px;
+   width: 250px;
+   height: 160px;
+   position:relative;
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+}
+
+.pesanmenu img{
+  width: 120px;
+  height: 120px;
+  transform: translateX(-30px)translateY(-20px);
+  border-radius: 20px;
+  filter: drop-shadow(5px 10px 10px rgb(246, 162, 5));
+}
+
+.pesanmenu button{
+  transform: translateY(30px) translateX(-10px);
+  border-radius:10px;
+
+  background-color: #c77933;
+  color: white;
+
+width: 100px;
+padding: 5px;
+position: absolute;
+gap: 20px;
+}
+
+#totalharga{
+  transform: translateY(100px);
+width: 100px;
+height: 50px;
+position: absolute;
+left: 46%;
+top:60%;
+border-radius: 10px;
+background-color: green;
+color: white;
+filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
+}
+
+.panelTotal{
+  background:linear-gradient(45deg,rgb(177, 177, 124),rgb(239, 239, 220));
+  position: absolute;
+
+  width: 1300px;
+  height: 420px;
+  top:1%;
+  border-radius:40px;
+  transform: translateY(-120px);
+  display: flex ;
+  justify-content: center;
+  display: none;
+  
+
+}
+
+.inputpaneltotal{
+  display: flex;
+  flex-direction: column;
+ left: 30%;
+  position: absolute;
+  justify-content: center;
+  gap: 10px;
+  width: 400px;
+  height: 200px;
+
+}
+
+.panelTotal input{
+  border-radius:30px;
+  height: 30px;
+ 
+}
+
+.submit{
+  width: 50px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  transform: translateX(160px);
+}
+
+.buttontutupaddtotal{
+top: 95%;
+left: 48%;
+position: absolute;
+border: 10px;
+padding: 5px;
+}
+
+.buttontutupaddtotal button{
+  background-color:red ;
+  color: white;
+  border-radius: 10px;
+}
+
+.kurangi{
+  height: 29px !important;
+  width: 30px !important;
+  transform: translateX(100px) translateY(30px) !important;
+  background-color: #c77933 !important;
+}
+
+.notetotaluser{
+  background-color:none;
+  height: 200px;
+  width: 500px;
+  position: absolute;
+  top: 52%;
+  left: 28%;
+  display: flex;
+  justify-content: center;
+}
+
+.notediv{
+  background-color: rgb(243, 168, 29);
+  color: rgb(251, 248, 248);
+  position: absolute;
+  z-index: 10000;
+  border-radius: 20px;
+  width: 420px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <div class="imgUtama">
+    <img src="image/utama-removebg-preview(1).png">
+  </div>
+
+  
+  <div class="kalimat">
+    
+    <div class="selogan">
+      <p>Satu Gigitan Membuat Ketagihan</p>
+    </div>
+    <img src="image/kalimat.png">
+    <P class="p1">Dimsum Kekinian Yang Menghadirkan Rasa Baru Yang Belum Pernah Ada Di setiap Gigitan</P>
+    <button onclick="openDiskon()">Lihat Diskon</button>
+    <button id="lihatListHarga"  onclick="lihatListHargaYa()">Lihat List Harga Menu</button>
+    <button id="lihat" class="see"  onclick="lihat()">Lihat Menu</button>
+   </div>
+   
+
+   
+<div id= "tutup" class="panelMenu">
+  <div class="kalimatMenuDaftar">
+  <h3 class="h3menu">DAFTAR MENU ROUSTZ</h3>
+  <P class="pmenu">Berikut daftar menu Dimsum</P>
+  
+  <div class="indukimg">
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+
+  
+  <div class="imgmenu">
+    <img src="image/burger.jpg">
+    <p>RP.40.000</p>
+  </div>
+</div>
+
+  
+
+</div>
+<button class="buttonpaneltutup" onclick="tutup()">tutup</button>
+</div>
+
+
+<div id="diskon"  class="paneldiskon">
+  <h3>Daftar Diskon Yang Tersedia</h3>
+  <p>Min Belanja Rp200 Diskon 10%</p>
+  <p>Min Belanja Rp400 Diskon 20%</p>
+  <p>Min Belanja Rp500 Diskon 25%</p>
+  <p>Min Belanja Rp650 Diskon 40%</p>
+  <button class="closediskon"onclick="tutupDiskon()">TUTUP</button>
+</div>
+
+
+<div class="indukpesanmenu">
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga1" onclick="addMenu1()">Pesan</button>
+  <button class="kurangi"onclick="min1()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+</svg></button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga2" onclick="addMenu2()">Pesan</button>
+  <button class="kurangi"onclick="min2()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga3" onclick="addMenu3()">Pesan</button>
+  <button class="kurangi"onclick="min3()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga4" onclick="addMenu4()">Pesan</button>
+  <button class="kurangi"onclick="min4()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga5" onclick="addMenu5()">Pesan</button>
+  <button class="kurangi"onclick="min5()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga6" onclick="addMenu6()">Pesan</button>
+  <button class="kurangi"onclick="min6()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga7" onclick="addMenu7()">Pesan</button>
+  <button class="kurangi"onclick="min7()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga8" onclick="addMenu8()">Pesan</button>
+  <button class="kurangi"onclick="min8()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga9" onclick="addMenu9()">Pesan</button>
+  <button class="kurangi"onclick="min9()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga10" onclick="addMenu10()">Pesan</button>
+  <button class="kurangi"onclick="min10()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga11" onclick="addMenu11()">Pesan</button>
+  <button class="kurangi"onclick="min11()">-</button>
+</div>
+
+<div class="pesanmenu">
+  <img src="image/burger.jpg">
+  <button id="litaharga12" onclick="addMenu12()">Pesan</button>
+  <button class="kurangi"onclick="min12()">-</button>
+</div>
+
+
+
+
+<div id="paneltotalya"  class="panelTotal">
+
+<div class="inputpaneltotal">
+<input id="nama" type="text"placeholder="masukan nama anda">
+<input id="alamat" type="text"placeholder="masukan Alamat anda">
+<input id="nomer" type="text" placeholder="masukan nomer telfon anda ">
+<button class="submit" onclick="submit()">add</button>
+<button class="submit" onclick="submit1()">wa</button>
+
+</div>
+
+<div id="notetotaluser" class="notetotaluser">
+
+</div>
+
+<div class="buttontutupaddtotal">
+  <button onclick="tutupAddTotal()">Tutup</button>
+</div>
+</div>
+
+
+<div class="addharga">
+  <button id="totalharga"  class="totalhargaclass"onclick="addTotal()">Add Total</button>
+</div>
+</div>
+
+
+<script>
+
+
+function lihatListHargaYa(){
+  document.getElementById('lihatListHarga').scrollIntoView({behavior:"smooth"})
+}
+
+  function tutup(){
+   let tutup = document.getElementById('tutup');
+   tutup.style.display="none"
+  }
+
+
+  function lihat(){
+    let tutup = document.getElementById('tutup');
+   tutup.style.display="block"
+   document.getElementById('tutup').scrollIntoView({behavior:"smooth"})
+  }
+
+
+  function openDiskon(){
+    let tutupdis = document.getElementById('diskon');
+    tutupdis.style.display="block"
+    document.getElementById('diskon').scrollIntoView({behavior:"smooth"})
+  }
+
+  function tutupDiskon(){
+    let tutupdis = document.getElementById('diskon');
+    tutupdis.style.display="none"
+  }
+
+  
+  function tutupAddTotal(){
+     let paneltotalya = document.getElementById('paneltotalya');
+     paneltotalya.style.display="none"
+  }
+
+
+
+  function tutupAddTotal(){
+     let paneltotalya = document.getElementById('paneltotalya');
+     paneltotalya.style.display="none"
+  }
+
+
+
+
+
+
+
+
+
+
+
+  
+// TAMBAH MENU //
+  harga1 = 0;
+  function addMenu1(){
+    harga1 = harga1 + 100
+    let litaharga1 = document.getElementById('litaharga1').innerText = `RP.${harga1}.000`
+  }
+
+  
+  harga2 = 0;
+  function addMenu2(){
+    harga2 = harga2 + 200
+        let litaharga1 = document.getElementById('litaharga2').innerText = `RP.${harga2}.000`
+  }
+
+  
+  harga3 = 0;
+  function addMenu3(){
+    harga3= harga3 + 300
+        let litaharga1 = document.getElementById('litaharga3').innerText = `RP.${harga3}.000`
+  }
+
+  
+  harga4 = 0;
+  function addMenu4(){
+    harga4 = harga4 + 400
+        let litaharga1 = document.getElementById('litaharga4').innerText = `RP.${harga4}.000`
+  }
+
+  
+  harga5 = 0;
+  function addMenu5(){
+    harga5 = harga5 + 500
+        let litaharga1 = document.getElementById('litaharga5').innerText = `RP.${harga5}.000`
+  }
+
+  
+  harga6 = 0;
+  function addMenu6(){
+    harga6 = harga6 + 600
+        let litaharga1 = document.getElementById('litaharga6').innerText = `RP.${harga6}.000`
+  }
+
+  
+  harga7 = 0;
+  function addMenu7(){
+    harga7 = harga7 + 700
+        let litaharga1 = document.getElementById('litaharga7').innerText = `RP.${harga7}.000`
+  }
+
+  
+  harga8 = 0;
+  function addMenu8(){
+    harga8 = harga8 + 800
+        let litaharga1 = document.getElementById('litaharga8').innerText = `RP.${harga8}.000`
+  }
+
+  
+  harga9 = 0;
+  function addMenu9(){
+    harga9 = harga9 + 900
+        let litaharga1 = document.getElementById('litaharga9').innerText = `RP.${harga9}.000`
+  }
+
+  
+  harga10 = 0;
+  function addMenu10(){
+    harga10 = harga10 + 1000
+        let litaharga1 = document.getElementById('litaharga10').innerText = `RP.${harga10}.000`
+  }
+  
+
+  harga11 = 0;
+  function addMenu11(){
+    harga11 = harga11 + 1100
+        let litaharga1 = document.getElementById('litaharga11').innerText = `RP.${harga11}.000`
+  }
+
+  
+  harga12 = 0;
+  function addMenu12(){
+    harga12= harga12 + 1200
+        let litaharga1 = document.getElementById('litaharga12').innerText = `RP.${harga12}.000`
+  }
+
+  
+  harga13 = 0;
+  function addMenu13(){
+    harga13 = harga13 + 1300
+        let litaharga1 = document.getElementById('litaharga13').innerText = `RP.${harga13}.000`
+  }
+
+  
+  harga14 = 0;
+  function addMenu14(){
+    harga14 = harga14 + 1400
+        let litaharga1 = document.getElementById('litaharga14').innerText = `RP.${harga14}.000`
+  }
+
+
+
+  // KURANGIN MENU //
+function min1(){
+  harga1 = Math.max(harga1-100,0)
+  let litaharga1 =document.getElementById('litaharga1').innerText =`RP.${harga1}.000`
+  if(harga1 <1){
+    document.getElementById('litaharga1').innerText = `pesan`
+    alert("pesan sekarang!")
+  }}
+
+function min2(){
+  harga2 =Math.max(harga2 - 100,0);
+  document.getElementById('litaharga2').innerText =`RP.${harga2}.000`
+}
+
+
+  
+function min3(){
+  harga3 = Math.max(harga3-100,0)
+  let litaharga3 =document.getElementById('litaharga4').innerText =`RP.${harga3}.000`
+  if(harga3 <1){
+    document.getElementById('litaharga3').innerText = `pesan`
+    alert("pesan sekarang!")
+  }}
+ 
+  function min4(){
+  harga4 = Math.max(harga4-100,0)
+  let litaharga4 =document.getElementById('litaharga4').innerText =`RP.${harga4}.000`
+  if(harga4 <1){
+    document.getElementById('litaharga4').innerText = `pesan`
+    alert("pesan sekarang!")
+  }}
+  function min5(){
+  harga5 = Math.max(harga5-100,0)
+  let litaharga5 =document.getElementById('litaharga5').innerText =`RP.${harga5}.000`
+  if(harga5 <1){
+    document.getElementById('litaharga5').innerText = `pesan`
+    alert("pesan sekarang!")
+  }}
+  function min6(){
+  harga6 = Math.max(harga6-100,0)
+  let litaharga6 =document.getElementById('litaharga6').innerText =`RP.${harga6}.000`
+  if(harga6 <1){
+    document.getElementById('litaharga6').innerText = `pesan`
+    alert("pesan sekarang!")
+  }}
+  function min7(){
+  harga7 = Math.max(harga7-100,0)
+  let litaharga7 =document.getElementById('litaharga6').innerText =`RP.${harga7}.000`
+  if(harga7 <1){
+    document.getElementById('litaharga7').innerText = `pesan`
+    alert("pesan sekarang!")
+  }}
+  function min8(){
+  harga8 = Math.max(harga8 - 100, 0)
+  let litaharga8 = document.getElementById('litaharga8').innerText = `RP.${harga8}.000`
+  if(harga8 < 1){
+    document.getElementById('litaharga8').innerText = `pesan`
+    alert("pesan sekarang!")
+  }
+}
+
+function min9(){
+  harga9 = Math.max(harga9 - 100, 0)
+  let litaharga9 = document.getElementById('litaharga9').innerText = `RP.${harga9}.000`
+  if(harga9 < 1){
+    document.getElementById('litaharga9').innerText = `pesan`
+    alert("pesan sekarang!")
+  }
+}
+
+function min10(){
+  harga10 = Math.max(harga10 - 100, 0)
+  let litaharga10 = document.getElementById('litaharga10').innerText = `RP.${harga10}.000`
+  if(harga10 < 1){
+    document.getElementById('litaharga10').innerText = `pesan`
+    alert("pesan sekarang!")
+  }
+}
+
+function min11(){
+  harga11 = Math.max(harga11 - 100, 0)
+  let litaharga11 = document.getElementById('litaharga11').innerText = `RP.${harga11}.000`
+  if(harga11 < 1){
+    document.getElementById('litaharga11').innerText = `pesan`
+    alert("pesan sekarang!")
+  }
+}
+
+function min12(){
+  harga12 = Math.max(harga12 - 100, 0)
+  let litaharga12 = document.getElementById('litaharga12').innerText = `RP.${harga12}.000`
+  if(harga12 < 1){
+    document.getElementById('litaharga12').innerText = `pesan`
+    alert("pesan sekarang!")
+  }
+}
+
+function min13(){
+  harga13 = Math.max(harga13 - 100, 0)
+  let litaharga13 = document.getElementById('litaharga13').innerText = `RP.${harga13}.000`
+  if(harga13 < 1){
+    document.getElementById('litaharga13').innerText = `pesan`
+    alert("pesan sekarang!")
+  }
+}
+
+function min14(){
+  harga14 = Math.max(harga14 - 100, 0)
+  let litaharga14 = document.getElementById('litaharga14').innerText = `RP.${harga14}.000`
+  if(harga14 < 1){
+    document.getElementById('litaharga14').innerText = `pesan`
+    alert("pesan sekarang!")
+  }
+}
+
+
+
+
+
+// ADD TOMBOL //
+
+function addTotal(){
+  let totalBelanja = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
+    if(totalBelanja < 100){
+      let paneltotalya = document.getElementById('paneltotalya');
+      paneltotalya.style.display= "none";
+      alert("MINIMAL ORDER 100K DULU YA")
+    }
+
+    else{
+      let paneltotalya = document.getElementById('paneltotalya');
+      paneltotalya.style.display= "block";
+    }
+   }
+
+
+   // VALIDASI INPUT//
+
+    let namauser = [];
+    let namaalamat = [];
+    let namanomer = [];
+    function submit(){
+    let nama = document.getElementById('nama').value;
+    let alamat =document.getElementById('alamat').value;
+    let nomer = document.getElementById('nomer').value;
+    submit1(nomer)
+    validasiNomer = /^08\d{9,10}$/; 
+
+    if(nama ===""){
+      alert("nama isi dulu ya");
+    }
+
+    else if(alamat ===""){
+      alert("alamat kamu isi dulu ya")
+    }
+
+    else if(!validasiNomer.test(nomer)){
+        alert("masukan nomer anda")
+    }
+
+    else{
+     
+      tampilkan(nama,alamat,nomer)
+     
+    }
+    }
+
+    //TAMPILKAN KAN KE USER//
+function tampilkan(name,adres,number){
+ 
+  let totalBelanja1 = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
+  hitungDiskon()
+  
+let hitungHasilDsikon = totalBelanja1 * (getDiskon/100);
+let hasilfix = totalBelanja1 - hitungHasilDsikon; 
+
+
+  const notetotaluser = document.getElementById('notetotaluser');
+  notetotaluser.innerHTML="";
+  const div = document.createElement('div');
+  div.className = "notediv";
+  let pesan = div.innerHTML = `halo ${name} Total Pesanan Anda RP.${totalBelanja1}.000 Dan Dapat Diskon ${getDiskon}% Total Menjadi Rp.${hasilfix}.000 `
+  
+  notetotaluser.appendChild(div);
+  
+};
+
+
+// HITUNG DISKON//
+getDiskon = 0;
+function hitungDiskon(){
+  
+let totalBelanja2 = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
+if(totalBelanja2 >= 1000){
+  getDiskon = 55
+  alert("DAPAT DISKON 55%")
+}
+
+else if(totalBelanja2 >=500){
+  getDiskon = 40
+  alert("DAPAT DISKON 40%")
+}
+
+else if(totalBelanja2 >= 200){
+  getDiskon = 10
+  alert("DAPAT DISKON 10%")
+}
+
+else{
+  getDiskon = 0
+  alert("BELUM DAPAT DISKON");
+}
+
+}
+
+function submit1(number){
+   let pesan =  `halo  Total Pesanan Anda RP..000 Dan Dapat DiskonTotal Menjadi Rp000 `
+  const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
+  window.open(linkWA, '_blank');
+}
+
+  
+</script>
+</body>
+</html>
