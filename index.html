@@ -958,7 +958,7 @@ function submit1(){
   let alamat =document.getElementById('alamat').value;
   let nomer = document.getElementById('nomer').value;
   const number = "6281399549218"
-   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalBelanja5}.000 Dan Dapat Diskon{getDiskon}% total di bayarkan menjadi Rp{hasilfix1}.000`
+   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalBelanja5}.000 Dan Dapat Diskon${getDiskon}% total di bayarkan menjadi Rp${hasilfix1}.000`
   const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
   window.open(linkWA, '_blank');
 }
