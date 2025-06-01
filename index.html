@@ -874,7 +874,7 @@ function addTotal(){
     let nama = document.getElementById('nama').value;
     let alamat =document.getElementById('alamat').value;
     let nomer = document.getElementById('nomer').value;
-    submit1(nomer)
+  
     validasiNomer = /^08\d{9,10}$/; 
 
     if(nama ===""){
@@ -944,8 +944,9 @@ else{
 
 }
 
-function submit1(number){
-   let pesan =  `halo  Total Pesanan Anda RP..000 Dan Dapat DiskonTotal Menjadi Rp000 `
+function submit1(){
+  const number = "6281399549218"
+   let pesan =  `halo ${nama}  Total Pesanan Anda RP.${totalBelanja}.000 Dan Dapat DiskonTotal Menjadi Rp000`
   const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
   window.open(linkWA, '_blank');
 }
