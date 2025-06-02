@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.05">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     body{
@@ -305,6 +306,62 @@ padding: 5px;
   text-align: center;
 }
 
+
+.namamenu{
+ display: flex;
+
+position: absolute;
+top:80px;
+left: 120px;
+background-color:rgb(230, 216, 189);
+opacity: 1.6;
+border-radius: 10px;
+height: 50px;
+
+
+}
+
+.namamenu p{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.namamenu h5{
+ transform: translateY(20px) translateX(-40px);
+}
+
+.star{
+transform: translateX(120px) translateY(-18px);
+display: flex;
+
+width: 50px;
+position: relative;
+}
+
+.starsv{
+  fill: rgb(41, 31, 31);
+  background-color: yellow;
+  display: none;
+}
+
+
+.starp{
+  transform: translateY(-1px) translateX(20px);
+  color: black !important;
+
+  position: absolute;
+}
+
+
+.starsv1{
+  fill: black !important;
+ 
+  position: absolute;
+  transform:translateX(1px);
+  z-index: 100;
+}
+
+
   </style>
 </head>
 <body>
@@ -443,6 +500,22 @@ padding: 5px;
   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
   <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
 </svg></button>
+<div class="namamenu">
+  <p>dismum keju</p>
+   <h5>500k</h5>
+ </div>
+ 
+ <div class="star">
+<p id="starkuning1" onclick="starkuningbt1()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+  <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+</svg></p>
+
+<p id="starputih1" onclick="starputihbt1()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+  <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+</svg></p>
+
+<p class="starp"> 4.9</p>
+</div>
 </div>
 
 <div class="pesanmenu">
@@ -452,6 +525,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning2" onclick="starkuningbt2()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih2" onclick="starputihbt2()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -461,6 +550,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning3" onclick="starkuningbt3()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih3" onclick="starputihbt3()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -470,6 +575,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning4" onclick="starkuningbt4()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih4" onclick="starputihbt4()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -479,6 +600,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning5" onclick="starkuningbt5()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih5" onclick="starputihbt5()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -488,6 +625,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning6" onclick="starkuningbt6()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih6" onclick="starputihbt6()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -497,6 +650,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning7" onclick="starkuningbt7()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih7" onclick="starputihbt7()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -506,6 +675,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning8" onclick="starkuningbt8()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih8" onclick="starputihbt8()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -515,6 +700,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+   <p>dismum keju</p>
+    <h5>500k</h5>
+  </div>
+  
+ <div class="star">
+  <p id="starkuning9" onclick="starkuningbt9()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih9" onclick="starputihbt9()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -524,6 +725,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning10" onclick="starkuningbt10()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih10" onclick="starputihbt10()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -533,6 +750,22 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
+   
+ <div class="star">
+  <p id="starkuning11" onclick="starkuningbt11()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih11" onclick="starputihbt11()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 </div>
 
 <div class="pesanmenu">
@@ -542,7 +775,23 @@ padding: 5px;
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
+  <div class="namamenu">
+    <p>dismum keju</p>
+     <h5>500k</h5>
+   </div>
 </div>
+
+<div class="star">
+  <p id="starkuning12" onclick="starkuningbt12()" class="starsv"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p id="starputih12" onclick="starputihbt12()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
+    <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+  </svg></p>
+  
+  <p class="starp"> 4.9</p>
+  </div>
 
 
 
@@ -575,6 +824,130 @@ padding: 5px;
 
 
 <script>
+
+
+
+function starputihbt1() {
+  document.getElementById('starkuning1').style.display = "block";
+  document.getElementById('starputih1').style.display = "none";
+}
+
+function starkuningbt1() {
+  document.getElementById('starputih1').style.display = "block";
+  document.getElementById('starkuning1').style.display = "none";
+}
+
+function starputihbt2() {
+  document.getElementById('starkuning2').style.display = "block";
+  document.getElementById('starputih2').style.display = "none";
+}
+
+function starkuningbt2() {
+  document.getElementById('starputih2').style.display = "block";
+  document.getElementById('starkuning2').style.display = "none";
+}
+
+function starputihbt3() {
+  document.getElementById('starkuning3').style.display = "block";
+  document.getElementById('starputih3').style.display = "none";
+}
+
+function starkuningbt3() {
+  document.getElementById('starputih3').style.display = "block";
+  document.getElementById('starkuning3').style.display = "none";
+}
+
+function starputihbt4() {
+  document.getElementById('starkuning4').style.display = "block";
+  document.getElementById('starputih4').style.display = "none";
+}
+
+function starkuningbt4() {
+  document.getElementById('starputih4').style.display = "block";
+  document.getElementById('starkuning4').style.display = "none";
+}
+
+function starputihbt5() {
+  document.getElementById('starkuning5').style.display = "block";
+  document.getElementById('starputih5').style.display = "none";
+}
+
+function starkuningbt5() {
+  document.getElementById('starputih5').style.display = "block";
+  document.getElementById('starkuning5').style.display = "none";
+}
+
+function starputihbt6() {
+  document.getElementById('starkuning6').style.display = "block";
+  document.getElementById('starputih6').style.display = "none";
+}
+
+function starkuningbt6() {
+  document.getElementById('starputih6').style.display = "block";
+  document.getElementById('starkuning6').style.display = "none";
+}
+
+function starputihbt7() {
+  document.getElementById('starkuning7').style.display = "block";
+  document.getElementById('starputih7').style.display = "none";
+}
+
+function starkuningbt7() {
+  document.getElementById('starputih7').style.display = "block";
+  document.getElementById('starkuning7').style.display = "none";
+}
+
+function starputihbt8() {
+  document.getElementById('starkuning8').style.display = "block";
+  document.getElementById('starputih8').style.display = "none";
+}
+
+function starkuningbt8() {
+  document.getElementById('starputih8').style.display = "block";
+  document.getElementById('starkuning8').style.display = "none";
+}
+
+function starputihbt9() {
+  document.getElementById('starkuning9').style.display = "block";
+  document.getElementById('starputih9').style.display = "none";
+}
+
+function starkuningbt9() {
+  document.getElementById('starputih9').style.display = "block";
+  document.getElementById('starkuning9').style.display = "none";
+}
+
+function starputihbt10() {
+  document.getElementById('starkuning10').style.display = "block";
+  document.getElementById('starputih10').style.display = "none";
+}
+
+function starkuningbt10() {
+  document.getElementById('starputih10').style.display = "block";
+  document.getElementById('starkuning10').style.display = "none";
+}
+
+function starputihbt11() {
+  document.getElementById('starkuning11').style.display = "block";
+  document.getElementById('starputih11').style.display = "none";
+}
+
+function starkuningbt11() {
+  document.getElementById('starputih11').style.display = "block";
+  document.getElementById('starkuning11').style.display = "none";
+}
+
+function starputihbt12() {
+  document.getElementById('starkuning12').style.display = "block";
+  document.getElementById('starputih12').style.display = "none";
+}
+
+function starkuningbt12() {
+  document.getElementById('starputih12').style.display = "block";
+  document.getElementById('starkuning12').style.display = "none";
+}
+
+
 
 
 function lihatListHargaYa(){
