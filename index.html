@@ -868,13 +868,42 @@ font-weight: 900;
 
 </div>
 <div class="navbar">
-  <button onclick="halaman1()">halama1</button>
-  <button onclick="halaman2()">halaman2</button>
-  <button onclick="halaman3()">halaman3</button>
+  <button id="halamanbt1" onclick="halaman1()">halaman1</button>
+  <button id="halamanbt2" onclick="halaman2()">halaman2</button>
+  <button id="halamanbt3" onclick="halaman3()">halaman3</button>
 </div>
 
 <script>
 
+
+
+function halaman1(){
+  let halaman1 = document.getElementById('halamanbt1');
+  halaman1.style.backgroundColor ="orange"
+  let halaman2 = document.getElementById('halamanbt2');
+  let halaman3 = document.getElementById('halamanbt3');
+  halaman2.style.backgroundColor="rgb(227, 227, 168)"
+   halaman3.style.backgroundColor="rgb(227, 227, 168)"
+
+}
+
+function halaman2(){
+  let halaman2 = document.getElementById('halamanbt2');
+  halaman2.style.backgroundColor="orange"
+  let halaman1 = document.getElementById('halamanbt1');
+  let halaman3 = document.getElementById('halamanbt3');
+    halaman1.style.backgroundColor ="rgb(227, 227, 168)"
+     halaman3.style.backgroundColor ="rgb(227, 227, 168)"
+}
+
+function halaman3(){
+  let halaman3 = document.getElementById('halamanbt3');
+  halaman3.style.backgroundColor ="orange"
+  let halaman2 = document.getElementById('halamanbt2');
+  let halaman1 = document.getElementById('halamanbt1');
+      halaman1.style.backgroundColor ="rgb(227, 227, 168)"
+        halaman2.style.backgroundColor="rgb(227, 227, 168)"
+}
 
 
 function starputihbt1() {
