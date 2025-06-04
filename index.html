@@ -423,10 +423,13 @@ font-weight: 900;
 }
 
 .panelcart button {
-  transform: translateX(200px)translateY(200px);
-  position: fixed;
+  transform: translateX(410px)translateY(35px);
+  position: absolute;
   z-index: 100000;
- 
+  color: red;
+width: 50px;
+ border-radius: 0px;
+  gap: 20px;
 }
 
 .classcart{
@@ -435,6 +438,7 @@ font-weight: 900;
   background-color: rgb(226, 119, 43);
   gap: 20px;
   transform: translateY(50px);
+  position: relative;
 }
 
 .classcart img{
@@ -487,6 +491,15 @@ background-color: black;
 }
 
 
+.btjs{
+  position: absolute;
+  transform: translateY(-200px);
+}
+
+.classpesancart{
+  display: none;
+  transform: translateY(625px)  translateX(220px) !important;
+}
 
 
   </style>
@@ -1074,47 +1087,111 @@ function bttutupinfo(){
 
 
 
+
+//TOMBOL CART//
+jumlah =1;
 function cartbt1(){
- 
- let gambarmakanan1 = document.getElementById('gambarmakanan1')
-  let gambarfix = gambarmakanan1.getAttribute("src");
+   
+  let gambarmakanan1 = document.getElementById('gambarmakanan1');
   let namamakanan1 = document.getElementById('namamakanan1');
   let hargamakan1 = document.getElementById('hargamakan1');
   let tutupbt = document.getElementById('infotutupyo');
+  alert("berhasil di tambahkan ke keranjang")
  
- 
-  let wadahpanelcart = document.getElementById('wadahpanelcart')
-
- wadahpanelcart.innerHTML=""
-
-  
+  wadahpanelcart.innerHTML=""
   const div = document.createElement('div');
   div.className="classcart";
+
   div.innerHTML = `
-  <img src="${gambarfix}">
- 
   
-  `
-
-const div1 = document.createElement('div');
-
-div1.innerHTML=` 
+  <img src="${gambarmakanan1.src}">`
+  const div1 = document.createElement('div');
+  div1.innerHTML=` 
  <h2>${namamakanan1.innerHTML}</h2>
- <h3>${hargamakan1.innerHTML}</h3>`
+ <h3>${hargamakan1.innerHTML}</h3>
+ 
+
+`
+
+//TOMBOL PESAN//
+const btmin = document.createElement('button')
 
 
 
+btmin.innerHTML= 1
+
+
+
+
+//
+
+//TOMBOL TAMBAH//
+const btplus = document.createElement('button')
+btplus.innerHTML = "+"
+btplus.style.transform="translateX(390px)translateY(35px)"
+
+btplus.style.width= "20px"
+btplus.addEventListener("click", function(){
+  jumlah = jumlah + 1
+  btmin.innerHTML= jumlah
+  harga1 = harga1 + 100
+  console.log(`${harga1}`)
+
+  if(harga1 < 1 ){
+    alert("PESAN DULU YA KE KERANJANG!")
+   pesancart.style.display="none"
+
+  }
+  pesancart.style.display="block"
+
+
+})
+
+// ...//
+
+//button KURANG//
+const btkurang = document.createElement('button')
+btkurang.innerHTML = "-"
+btkurang.style.transform="translateX(460px)translateY(35px)"
+
+btkurang.style.width= "20px"
+
+btkurang.addEventListener("click", function(){
+  jumlah = Math.max(jumlah - 1,0)
+  btmin.innerHTML= jumlah
+  harga1 = Math.max(harga1 - 100,0)
+  console.log(harga1)
+
+  if(jumlah == 0){
+    pesancart.style.display="none"
+    div.remove()
+
+  }
+
+
+})
+
+
+// TOMBOL ADD PESAN//
+const pesancart = document.createElement('button');
+pesancart.className="classpesancart"
+pesancart.style.transform="translateY(300px)"
+pesancart.innerHTML="PESAN"
+pesancart.style.display="block"
+
+pesancart.addEventListener("click" , function(){
+  let paneltotalya = document.getElementById('paneltotalya');
+  paneltotalya.style.display="block";
+  wadahpanelcart.style.display="none"
+})
+//-------///
+
+  div.appendChild(btkurang)
+  div.appendChild(btplus)
   div.appendChild(div1)
   wadahpanelcart.appendChild(div)
-}
-
-
-function moga(get){
-  let wadahpanelcart = document.getElementById('wadahpanelcart')
-  const moga = document.getElementById('moga')
-
-  wadahpanelcart.appendChild(moga)
-  
+  div.appendChild(btmin)
+  div.appendChild(pesancart)
 }
 
 
