@@ -532,14 +532,14 @@ width: 50px;
   align-items: center;
   border-radius: 20px;
   transform: translateY(-140px);
-  
+  animation: ucapan 2s ease-out;
 }
 
-  .tombolucapan{
+  .tombolucapan button{
     position : absolute;
-    transform:translateY(50px) 
-    color:red;
-     background-color:white;
+    transform:translateY(200px)translateX(-200px);
+    color:white;
+    background-color:red;
   }
     
 
@@ -1059,12 +1059,13 @@ width: 50px;
 </div>
 
 <!--UCAPAN-->
-<div class="panelucapan"  id="panelucapan">
+<div class="panelucapan"  id="panelucapanid">
   <h2 id="h2ucapan">HALO</h2>
-  <div class="tombolucapan>
+  <div class="tombolucapan">
   <button  onclick ="tutupucapan()">TUTUP</button>
   </div>
 </div>
+
 
 <!--info cart-->
 <div class="infocart">
@@ -1127,8 +1128,8 @@ width: 50px;
 <script>
 
   function tutupucapan(){
-  let panelucapan = document.getElementById('panelucapan');
-    panelucapan.style.display="none"
+  let panelucapan = document.getElementById('panelucapanid');
+   alert("halo")
   
   }
   
