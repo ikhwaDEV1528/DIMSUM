@@ -390,7 +390,9 @@ color: yellow;
   filter: drop-shadow(0px 0px 2000px rgb(28, 14, 5));
   box-shadow: 0px 0px 90px rgb(20, 1, 1), 0px 0px 10px orange;
   transform:translateX(-5px) translateY(150px);
+  position: relative;
 }
+
 
 .navbar button{
  width: 200px;
@@ -458,25 +460,27 @@ width: 50px;
   align-items: center;
   width: 200px;
   height: 200px !important;
-background-color: black;
+
   font-size: 45;
   transform:translateX(-520px)translateY(500px);
   display: flex;
   flex-direction: column;
   margin:20px;
-  
+   z-index: 1000;
 }
 
 
 .anakinfocart{
   position: absolute;
-  color: aqua;
+  color:white;
   gap: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.02px;
+  transform: translateY(860px) translateX(-110px);
+  z-index: 1000;
 }
 
 
@@ -501,10 +505,55 @@ background-color: black;
   transform: translateY(625px)  translateX(220px) !important;
 }
 
+.submit1{
+  display: none;
+}
+
+.tutupbuttonyaclass{
+  display: none;
+}
+
+.jamwaktu{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  z-index: -1;
+}
+
+
+.panelucapan{
+  position: absolute;
+  background-color: black;
+  color: white;
+  height: 400px;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  transform: translateY(-140px);
+  animation: ucapan 2s ease-out;
+}
+
+@keyframes ucapan{
+  from{
+    transform: translateY(-140px) scale(0.5);
+  }
+
+  to{
+    transform: translateY(-140px)  scale(1);
+  }
+}
 
   </style>
 </head>
 <body>
+
+
+  <div class="jamwaktu" id="jam">
+
+  </div>
+
   <div class="imgUtama">
     <img src="https://raw.githubusercontent.com/ikhwaDEV1528/DIMSUM/main/utama-removebg-preview(1).png">
   </div>
@@ -1001,6 +1050,11 @@ background-color: black;
     </div>
 </div>
 
+<!--UCAPAN-->
+<div class="panelucapan"  id="panelucapan">
+  <h2 id="h2ucapan">HALO</h2>
+</div>
+
 <!--info cart-->
 <div class="infocart">
   <div class="anakinfocart">
@@ -1023,8 +1077,10 @@ background-color: black;
 <input id="nama" type="text"placeholder="masukan nama anda">
 <input id="alamat" type="text"placeholder="masukan Alamat anda">
 <input id="nomer" type="text" placeholder="masukan nomer telfon anda ">
-<button class="submit" onclick="submit()">add</button>
-<button class="submit" onclick="submit1()">wa</button>
+<button  id="submitt"  class="submit" onclick="submit()">add</button>
+<button id="submit1"  class="submit1" onclick="submit1()">wa</button>
+<button id="submitwacart" onclick="submitwacart()">PESAN WA</button>
+<button id="tutupbuttonya" class="tutupbuttonyaclass" onclick="tomboltutup()">TUTUP</button>
 
 </div>
 
@@ -1033,7 +1089,7 @@ background-color: black;
 </div>
 
 <div class="buttontutupaddtotal">
-  <button  onclick="tutupAddTotal()">Tutup</button>
+  <button id="tutupyapanel" onclick="tutupAddTotal()">Tutup ya</button>
 </div>
 </div>
 
@@ -1055,9 +1111,46 @@ background-color: black;
 
 
 
+</div>
+
 <script>
 
 
+
+   setInterval(() => {
+  
+    let jam = document.getElementById('jam');
+    let waktu = new Date();
+
+    let isiwaktu =
+     waktu.getHours().toString().padStart(2,'0')+":"+
+     waktu.getMinutes().toString().padStart(2,'0')+":"+
+     waktu.getSeconds().toString().padStart(2,'0') 
+
+   jam.innerHTML= isiwaktu;
+   ucapan(isiwaktu)
+   },1000)
+
+    function ucapan(ini){
+      let wadahucapan = document.getElementById('panelucapan');
+      let ucapanh2 = document.getElementById('h2ucapan');
+
+      if(ini >= "06:00:00"){
+        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT PAGI"
+      }
+
+      else if(ini >= "10:00:00"){
+        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT SIANG"
+      }
+
+      else if(ini >= "15:00:00"){
+        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT SORE"
+      }
+
+      else{
+        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT MALAM"
+      }
+    }
 
 function infocek(){
   let wadahpanelcart = document.getElementById('wadahpanelcart');
@@ -1073,30 +1166,23 @@ function infocek(){
 
 
 
-function bttutupinfo(){
-  let wadahpanelcart = document.getElementById('wadahpanelcart');
-  wadahpanelcart.style.display="none"
-  let tutupbt = document.getElementById('infotutupyo');
-  tutupbt.style.display="none"
-  let hargatotal = document.getElementById('totalharga');
-  hargatotal.style.display="block"
-
-}
-
 
 
 
 
 
 //TOMBOL CART//
+
 jumlah =1;
-function cartbt1(){
+hargaDiskon = 100;
+function cartbt1(notetotaluser1){
    
+  totalBelanja7 =  harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
   let gambarmakanan1 = document.getElementById('gambarmakanan1');
   let namamakanan1 = document.getElementById('namamakanan1');
   let hargamakan1 = document.getElementById('hargamakan1');
   let tutupbt = document.getElementById('infotutupyo');
-  alert("berhasil di tambahkan ke keranjang")
+
  
   wadahpanelcart.innerHTML=""
   const div = document.createElement('div');
@@ -1132,12 +1218,14 @@ btplus.style.transform="translateX(390px)translateY(35px)"
 
 btplus.style.width= "20px"
 btplus.addEventListener("click", function(){
+  hargaDiskon = Math.max(hargaDiskon + 100 , 0)
+ 
   jumlah = jumlah + 1
   btmin.innerHTML= jumlah
-  harga1 = harga1 + 100
-  console.log(`${harga1}`)
+ 
 
-  if(harga1 < 1 ){
+
+  if(hargaDiskon < 1 ){
     alert("PESAN DULU YA KE KERANJANG!")
    pesancart.style.display="none"
 
@@ -1159,7 +1247,7 @@ btkurang.style.width= "20px"
 btkurang.addEventListener("click", function(){
   jumlah = Math.max(jumlah - 1,0)
   btmin.innerHTML= jumlah
-  harga1 = Math.max(harga1 - 100,0)
+  hargaDiskon = Math.max(hargaDiskon - 100,0)
   console.log(harga1)
 
   if(jumlah == 0){
@@ -1179,11 +1267,25 @@ pesancart.style.transform="translateY(300px)"
 pesancart.innerHTML="PESAN"
 pesancart.style.display="block"
 
-pesancart.addEventListener("click" , function(){
+
+pesancart.addEventListener("click" , function (){
+  let tombolcart = document.getElementById('tutupbuttonya')
+  let submitt = document.getElementById('submitt');
+  submitt.style.display="none"
+  tombolcart.style.display="block"
+
+
   let paneltotalya = document.getElementById('paneltotalya');
   paneltotalya.style.display="block";
   wadahpanelcart.style.display="none"
+
+
+ 
+
+
+
 })
+ 
 //-------///
 
   div.appendChild(btkurang)
@@ -1194,6 +1296,82 @@ pesancart.addEventListener("click" , function(){
   div.appendChild(pesancart)
 }
 
+
+// TOMBOL ADDPESANAN CART//
+////////////////////////////
+
+function tomboltutup(){
+
+ let output = document.getElementById('ouput1');
+
+ if(output > 1){
+    output = document.createElement('div');
+    output.id = 'output1';
+    output.style.transform = "translateY(300px) translateX(230px)";
+ 
+    paneltotalya.appendChild(output);
+    
+ }
+
+ else{
+  output.innerHTML="";
+  
+ }
+
+ 
+
+  
+  hitungDiskon()
+
+
+  
+  let hitungHasilDsikon = hargaDiskon * (getDiskoncart/100);
+  let hasilfix = hargaDiskon  - hitungHasilDsikon; 
+
+   let nama = document.getElementById('nama').value;
+   let alamat =document.getElementById('alamat').value;
+   let nomer = document.getElementById('nomer').value;
+
+   
+   
+   output.style.transform="translateY(300px)translateX(230px)"
+
+   output.innerHTML = `halo costumer ${nama}  TOTAL HARGA ANDA RP.${hargaDiskon}.000 dan dapat diskon ${getDiskoncart}% dan total di bayarkan RP.${hasilfix}.000`
+  
+
+  }
+
+
+
+// TOMBOL WA CART//
+function submitwacart(){
+
+  let nama = document.getElementById('nama').value;
+  let alamat =document.getElementById('alamat').value;
+  let nomer = document.getElementById('nomer').value;
+  hitungDiskon()
+  let totalBelanja8 = hargaDiskon;
+  let hitungHasilDsikon = totalBelanja8 * (getDiskoncart/100);
+  let hasilfix = totalBelanja8 - hitungHasilDsikon; 
+
+  const number = "6281399549218"
+   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${hargaDiskon}.000 Dan Dapat Diskon${getDiskoncart}% total di bayarkan menjadi Rp${hasilfix}.000`
+  const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
+  window.open(linkWA, '_blank');
+}
+
+
+function bttutupinfo(iniya){
+    iniya.style.display="none"
+  let wadahpanelcart = document.getElementById('wadahpanelcart');
+  wadahpanelcart.style.display="none"
+  let tutupbt = document.getElementById('infotutupyo');
+  tutupbt.style.display="none"
+  let hargatotal = document.getElementById('totalharga');
+  hargatotal.style.display="block"
+  
+
+}
 
 
 
@@ -1403,6 +1581,7 @@ function lihatListHargaYa(){
   
 // TAMBAH MENU //
   harga1 = 0;
+  hargaDiskon = 100;
   function addMenu1(){
     harga1 = harga1 + 100
     let litaharga1 = document.getElementById('litaharga1').innerText = `RP.${harga1}.000`
@@ -1623,6 +1802,7 @@ function min14(){
 // ADD TOMBOL //
 
 function addTotal(){
+  
   let totalBelanja = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
    
   if(totalBelanja < 100){
@@ -1634,16 +1814,16 @@ function addTotal(){
     else{
       let paneltotalya = document.getElementById('paneltotalya');
       paneltotalya.style.display= "block";
+      let submitt = document.getElementById('submitt');
+      submitt.style.display="block"
     }
    }
 
 
    // VALIDASI INPUT//
-
-    let namauser = [];
-    let namaalamat = [];
-    let namanomer = [];
+   
     function submit(){
+    let submit1 = document.getElementById('submit1');
     let nama = document.getElementById('nama').value;
     let alamat =document.getElementById('alamat').value;
     let nomer = document.getElementById('nomer').value;
@@ -1666,6 +1846,7 @@ function addTotal(){
     else{
      
       tampilkan(nama,alamat,nomer)
+      submit1.style.display="block"
      
     }
     }
@@ -1676,45 +1857,56 @@ function tampilkan(name,adres,number){
   let totalBelanja1 = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
   hitungDiskon()
   
-let hitungHasilDsikon = totalBelanja1 * (getDiskon/100);
-let hasilfix = totalBelanja1 - hitungHasilDsikon; 
+let hitungHasilDsikon = Math.max( totalBelanja1 * (getDiskon/100));
+let hasilfix = Math.max( totalBelanja1 - hitungHasilDsikon ); 
 
 
-  const notetotaluser = document.getElementById('notetotaluser');
+  let notetotaluser = document.getElementById('notetotaluser');
+ 
   notetotaluser.innerHTML="";
   const div = document.createElement('div');
+  cartbt1(`${div}`)
   div.className = "notediv";
   let pesan = div.innerHTML = `halo ${name} Total Pesanan Anda RP.${totalBelanja1}.000 Dan Dapat Diskon ${getDiskon}% Total Menjadi Rp.${hasilfix}.000 `
   
   notetotaluser.appendChild(div);
+
   
 };
 
 
+
+
 // HITUNG DISKON//
 getDiskon = 0;
+getDiskoncart = 0;
 function hitungDiskon(){
   
 let totalBelanja2 = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
-if(totalBelanja2 >= 1000){
+if(totalBelanja2 >= 1000  || hargaDiskon >= 1000){
   getDiskon = 55
+  getDiskoncart = 55;
   alert("DAPAT DISKON 55%")
 }
 
-else if(totalBelanja2 >=500){
+else if(totalBelanja2 >=500  || hargaDiskon >= 500){
   getDiskon = 40
+  getDiskoncart = 40;
   alert("DAPAT DISKON 40%")
 }
 
-else if(totalBelanja2 >= 200){
+else if(totalBelanja2 >= 200   || hargaDiskon >= 200){
   getDiskon = 10
+  getDiskoncart = 10
   alert("DAPAT DISKON 10%")
 }
 
 else{
   getDiskon = 0
+  getDiskoncart= 0
   alert("BELUM DAPAT DISKON");
 }
+
 
 }
 
