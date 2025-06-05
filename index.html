@@ -535,13 +535,13 @@ width: 50px;
   animation: ucapan 2s ease-out;
 }
 
-  .tombolucapan button{
-    position : absolute;
-    transform:translateY(200px)translateX(-200px);
-    color:white;
-    background-color:red;
-  }
-    
+
+.panelucapan button{
+  position: absolute;
+  transform: translateY(200px);
+  background-color: red;
+  color: white;
+}
 
 @keyframes ucapan{
   from{
@@ -1059,13 +1059,10 @@ width: 50px;
 </div>
 
 <!--UCAPAN-->
-<div class="panelucapan"  id="panelucapanid">
+<div class="panelucapan"  id="panelucapan">
   <h2 id="h2ucapan">HALO</h2>
-  <div class="tombolucapan">
-  <button  onclick ="tutupucapan()">TUTUP</button>
-  </div>
+  <button onclick="tutupucapan()">TUTP</button>
 </div>
-
 
 <!--info cart-->
 <div class="infocart">
@@ -1127,13 +1124,10 @@ width: 50px;
 
 <script>
 
-  function tutupucapan(){
-  let panelucapan = document.getElementById('panelucapanid');
-   alert("halo")
-  
-  }
-  
-
+ function tutupucapan(){
+  let panelucapan = document.getElementById('panelucapan');
+   panelucapan.style.display="none"
+ }
 
 
    setInterval(() => {
@@ -1941,4 +1935,12 @@ function submit1(){
   let alamat =document.getElementById('alamat').value;
   let nomer = document.getElementById('nomer').value;
   const number = "6281399549218"
-   let pesan =  `halo ${nama} ALAMAT A
+   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalBelanja5}.000 Dan Dapat Diskon${getDiskon}% total di bayarkan menjadi Rp${hasilfix1}.000`
+  const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
+  window.open(linkWA, '_blank');
+}
+
+  
+</script>
+</body>
+</html> 
