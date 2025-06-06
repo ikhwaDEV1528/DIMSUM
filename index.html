@@ -234,7 +234,7 @@ filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
 .panelTotal{
   background:linear-gradient(45deg,rgb(177, 177, 124),rgb(239, 239, 220));
   position: absolute;
-
+  
   width: 1300px;
   height: 420px;
   top:1%;
@@ -242,6 +242,7 @@ filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
   transform: translateY(-120px);
   display: flex ;
   justify-content: center;
+  flex-wrap: wrap;
   display: none;
   
 
@@ -256,7 +257,7 @@ filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
   gap: 10px;
   width: 400px;
   height: 200px;
-
+   
 }
 
 .panelTotal input{
@@ -1088,7 +1089,7 @@ width: 50px;
 </div>
 </div>
 
-<button  id="infotutupyo" class="infotutupya"  onclick="bttutupinfo()">TUTUP</button>
+<button  id="infotutupyo" class="infotutupya"  onclick="bttutupinfo()">TUTUPI</button>
 
 
 <div id="paneltotalya"  class="panelTotal">
@@ -1325,29 +1326,8 @@ pesancart.addEventListener("click" , function (){
 ////////////////////////////
 
 function tomboltutup(){
-
- let output = document.getElementById('ouput1');
-
- if(output > 1){
-    output = document.createElement('div');
-    output.id = 'output1';
-    output.style.transform = "translateY(300px) translateX(230px)";
- 
-    paneltotalya.appendChild(output);
-    
- }
-
- else{
-  output.innerHTML="";
-  
- }
-
- 
-
   
   hitungDiskon()
-
-
   
   let hitungHasilDsikon = hargaDiskon * (getDiskoncart/100);
   let hasilfix = hargaDiskon  - hitungHasilDsikon; 
@@ -1355,14 +1335,21 @@ function tomboltutup(){
    let nama = document.getElementById('nama').value;
    let alamat =document.getElementById('alamat').value;
    let nomer = document.getElementById('nomer').value;
-
-   
-   
-   output.style.transform="translateY(300px)translateX(230px)"
-
-   output.innerHTML = `halo costumer ${nama}  TOTAL HARGA ANDA RP.${hargaDiskon}.000 dan dapat diskon ${getDiskoncart}% dan total di bayarkan RP.${hasilfix}.000`
   
+  const output = document.createElement('div');
+  output.style.transform="translateY(300px)translateX(30px)"
+ 
 
+  if(getDiskoncart < 1){
+    output.innerHTML = `<p> HALO COSTUMER <span style="color:blue">${nama}</span> TOTAL HARGA ANDA RP.<span style="color:red">${hargaDiskon}.000</span> BELUM DAPAT DISKON NIH , BELANJA MIN 200k YA! , DAN TOTAL YANG DI BAYARKAN RP.<span style="color:red">${hasilfix}.000</span></p>`
+  
+  }
+
+    else{
+      output.innerHTML = `halo costumer ${nama}  TOTAL HARGA ANDA RP.${hargaDiskon}.000 dan dapat diskon ${getDiskoncart}% dan total di bayarkan RP.${hasilfix}.000`
+  
+    }
+   paneltotalya.appendChild(output)
   }
 
 
@@ -1385,8 +1372,8 @@ function submitwacart(){
 }
 
 
-function bttutupinfo(iniya){
-    iniya.style.display="none"
+function bttutupinfo(){
+ 
   let wadahpanelcart = document.getElementById('wadahpanelcart');
   wadahpanelcart.style.display="none"
   let tutupbt = document.getElementById('infotutupyo');
