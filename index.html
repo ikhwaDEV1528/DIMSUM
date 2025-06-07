@@ -235,15 +235,15 @@ filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
   background:linear-gradient(45deg,rgb(177, 177, 124),rgb(239, 239, 220));
   position: relative;
   
-  width: 1300px;
-  height: 470px;
+  width: 1200px;
+  height: 570px;
   top:1%;
   border-radius:40px;
   transform: translateY(-820px) translateX(50px);
   display: flex ;
   justify-content: center;
   flex-wrap: wrap;
-  display: none;
+  display: block;
   
 
 }
@@ -256,7 +256,7 @@ filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
   width: 100px;
   height: 50px;
   border-radius:11px;
-  transform: translateX(150px)translateY(220px);
+  transform: translateX(150px)translateY(400px);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -462,7 +462,11 @@ font-weight: 900;
   height: 700px;
   width: 500px;
   transform: translateY(-120px);
-  display: none;
+
+  display: block;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-y: auto;
 }
 
 .panelcart button {
@@ -482,6 +486,7 @@ width: 50px;
   gap: 20px;
   transform: translateY(50px);
   position: relative;
+  z-index: 1000;
 }
 
 .classcart img{
@@ -553,7 +558,7 @@ padding: 10px;
 background-color: green;
 color:white;
 border-radius: 10px;
-transform: translateY(290px) translateX(150px);
+transform: translateY(400px) translateX(150px);
 position: absolute;
 }
 
@@ -617,6 +622,22 @@ padding: 10px;
   
 }
 
+
+
+.cartbt2class{
+  background-color: orange;
+  width: 600px;
+  height: 100px;
+  position: relative;
+
+}
+
+
+#gambarkosong{
+  display:none;
+  position: absolute;
+  z-index: -1;
+}
 
   </style>
 </head>
@@ -757,7 +778,7 @@ padding: 10px;
 <div class="indukpesanmenu">
 
   <div id="wadahpanelcart" class="panelcart">
- 
+  
   </div>
   
 
@@ -798,15 +819,15 @@ padding: 10px;
 </div>
 
 <div class="pesanmenu">
-  <img src="https://raw.githubusercontent.com/ikhwaDEV1528/DIMSUM/main/burger.jpg">
+  <img  id="gambarmakanan2" src="https://raw.githubusercontent.com/ikhwaDEV1528/DIMSUM/main/burger.jpg">
   <button id="litaharga2" onclick="addMenu2()">Pesan</button>
   <button class="kurangi"onclick="min2()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
   <div class="namamenu">
-    <p>dismum keju</p>
-     <h5>500k</h5>
+    <p id="namamakanan2">dismum COKLAT</p>
+     <h5 id="hargamakanan2" >500</h5>
    </div>
    
  <div class="star">
@@ -818,10 +839,11 @@ padding: 10px;
     <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
   </svg></p>
   
+  <p  onclick="cartbt2()">
 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
-
+</p>
 
   <p class="starp"> 4.9</p>
   </div>
@@ -1156,7 +1178,7 @@ padding: 10px;
   <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
 </svg>PESAN WAi</button>
 <!--PESAN WA TOMBOL-->
-<button  class="submitwacart" id="submitwacart" onclick="submitwacart()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+<button  class="submitwacart" id="submitwacart1" onclick="submitwacart()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
   <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
 </svg> PESAN WA</button>
 <button id="tutupbuttonya" class="tutupbuttonyaclass" onclick="tomboltutup()">ENTERi</button>
@@ -1245,7 +1267,10 @@ padding: 10px;
       }
     }
 
+    let div;
+
 function infocek(){
+  
   let wadahpanelcart = document.getElementById('wadahpanelcart');
   wadahpanelcart.style.display="block"
   let tutupbt = document.getElementById('infotutupyo')
@@ -1254,6 +1279,10 @@ function infocek(){
   hargatotal.style.display="none"
 
   wadahpanelcart.scrollIntoView({behavior:"smooth"})
+  
+  
+
+
 }
 
 
@@ -1270,6 +1299,7 @@ jumlah =1;
 hargaDiskon = 100;
 let divoren
 
+
 function cartbt1(notetotaluser1){
 
   totalBelanja7 =  harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
@@ -1278,19 +1308,25 @@ function cartbt1(notetotaluser1){
   let hargamakan1 = document.getElementById('hargamakan1');
   let tutupbt = document.getElementById('infotutupyo');
 
+
  
-  wadahpanelcart.innerHTML=""
-  const div = document.createElement('div');
+
+ wadahpanelcart.innerHTML=""
+
+  let div = document.createElement('div');
   div.className="classcart";
 
-  div.innerHTML = `
+  div.innerHTML = `<p><img src="${gambarmakanan1.src}">`
   
-  <img src="${gambarmakanan1.src}">`
+  
+  // BUTA WADAH TULISAN NAMA MENU DAN HARGA//
   const div1 = document.createElement('div');
-  div1.innerHTML=` 
+  div1.innerHTML= `
+
+
  <h2>${namamakanan1.innerHTML}</h2>
  <h3>${hargamakan1.innerHTML}</h3>
- 
+ </p>
 
 `
 
@@ -1342,13 +1378,157 @@ btkurang.style.width= "20px"
 btkurang.addEventListener("click", function(){
   jumlah = Math.max(jumlah - 1,0)
   btmin.innerHTML= jumlah
+  
   hargaDiskon = Math.max(hargaDiskon - 100,0)
   console.log(harga1)
 
   if(jumlah == 0){
     pesancart.style.display="none"
     div.remove()
+   
+ 
+  }
 
+
+})
+
+
+// TOMBOL ADD PESAN//
+const pesancart = document.createElement('button');
+  
+pesancart.className="classpesancart"
+pesancart.style.transform="translateY(300px)"
+pesancart.innerHTML="PESAN"
+pesancart.style.display="block"
+
+
+pesancart.addEventListener("click" , function (){
+let tutupbuttonya = document.getElementById('tutupbuttonya');
+tutupbuttonya.style.display="block"
+  let divoren = document.getElementById('divoren')
+  divoren.style.display="none"
+
+  let tombolcart = document.getElementById('tutupbuttonya')
+  let submitt = document.getElementById('submitt');
+  submitt.style.display="none"
+  tombolcart.style.display="block"
+
+
+  let paneltotalya = document.getElementById('paneltotalya');
+  paneltotalya.style.display="block";
+  wadahpanelcart.style.display="none"
+
+
+ 
+
+
+
+})
+ 
+
+//-------///
+
+  div.appendChild(btkurang)
+  div.appendChild(btplus)
+  div.appendChild(div1)
+
+
+  div.appendChild(btmin)
+  div.appendChild(pesancart)
+  wadahpanelcart.appendChild(div)
+
+}
+
+
+//CARTBT2//
+
+
+
+
+jumlah2 =1;
+hargaDiskon2 = 100;
+
+function cartbt2(notetotaluser1){
+
+  totalBelanja7 =  harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
+  let gambarmakanan2 = document.getElementById('gambarmakanan2');
+  let namamakanan2 = document.getElementById('namamakanan2');
+  let hargamakan2 = document.getElementById('hargamakanan2');
+  let tutupbt = document.getElementById('infotutupyo');
+  let gambarkosong = document.getElementById('gambarkosong');
+
+ 
+  
+  const div = document.createElement('div');
+  div.className="classcart";
+
+
+  div.innerHTML = `<p>
+  
+  <img src="${gambarmakanan2.src}">`
+  const div1 = document.createElement('div');
+  div1.innerHTML=` 
+ <h2>${namamakanan2.innerHTML}</h2>
+ <h3>${hargamakan2.innerHTML}</h3>
+ </p>
+
+`
+
+//TOMBOL PESAN//
+const btmin = document.createElement('button')
+
+
+
+btmin.innerHTML= 1
+
+
+
+
+//
+
+//TOMBOL TAMBAH//
+const btplus = document.createElement('button')
+btplus.innerHTML = "+"
+btplus.style.transform="translateX(390px)translateY(35px)"
+
+btplus.style.width= "20px"
+btplus.addEventListener("click", function(){
+  hargaDiskon2 = Math.max(hargaDiskon2 + 100 , 0)
+ 
+  jumlah2 = jumlah2 + 1
+  btmin.innerHTML= jumlah2
+ 
+
+
+  if(hargaDiskon2 < 1 ){
+    alert("PESAN DULU YA KE KERANJANG!")
+   pesancart.style.display="none"
+
+  }
+  pesancart.style.display="block"
+
+
+})
+
+// ...//
+
+//button KURANG//
+const btkurang = document.createElement('button')
+btkurang.innerHTML = "-"
+btkurang.style.transform="translateX(460px)translateY(35px)"
+
+btkurang.style.width= "20px"
+
+btkurang.addEventListener("click", function(){
+  jumlah2 = Math.max(jumlah2 - 1, 0)
+  btmin.innerHTML= jumlah2
+  hargaDiskon2 = Math.max(hargaDiskon2 - 100,0)
+  console.log(harga1)
+
+  if(jumlah2 == 0){
+    pesancart.style.display="none"
+    div.remove()
+    
   }
 
 
@@ -1396,23 +1576,62 @@ tutupbuttonya.style.display="block"
   wadahpanelcart.appendChild(div)
   div.appendChild(btmin)
   div.appendChild(pesancart)
+  
 }
+
 
 
 // TOMBOL ADDPESANAN CART//
 ////////////////////////////
 
 let output
+
 function tomboltutup(){
 
-  
-   let nama = document.getElementById('nama').value;
-   let alamat =document.getElementById('alamat').value;
-   let nomer = document.getElementById('nomer').value;
+  totalbelanjacart = hargaDiskon + hargaDiskon2
   
   let output = document.getElementById('output');
   output.style.display="block"
   output.style.transform="translateY(310px)translateX(50px)"
+ 
+  
+  submitwacart1.addEventListener("click" , function(){
+
+
+    if(getDiskoncart === 0){
+      
+    let nama = document.getElementById('nama').value;
+    let alamat =document.getElementById('alamat').value;
+    let nomer = document.getElementById('nomer').value;
+    let submitwacart1 = document.getElementById('submitwacart1')
+     
+   let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
+   let hasilfix = totalbelanjacart  - hitungHasilDsikon;  
+ 
+   const number = "6281399549218"
+   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalbelanjacart}.000 , BELUM DAPAT DISKON NIH ,total di bayarkan menjadi Rp${hasilfix}.000`
+   const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
+   window.open(linkWA, '_blank');
+    }
+
+    else{
+
+    let nama = document.getElementById('nama').value;
+    let alamat =document.getElementById('alamat').value;
+    let nomer = document.getElementById('nomer').value;
+    let submitwacart1 = document.getElementById('submitwacart1')
+     
+   let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
+   let hasilfix = totalbelanjacart  - hitungHasilDsikon; 
+ 
+   const number = "6281399549218"
+   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalbelanjacart}.000 Dan Dapat Diskon${getDiskoncart}% total di bayarkan menjadi Rp${hasilfix}.000`
+   const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
+   window.open(linkWA, '_blank');
+    }
+    
+   })
+   
  
  
 
@@ -1426,13 +1645,20 @@ function tomboltutup(){
   else if(getDiskoncart === 0){
     
   hitungDiskon()
+  totalbelanjacart = hargaDiskon + hargaDiskon2
   
-  let hitungHasilDsikon = hargaDiskon * (getDiskoncart/100);
-  let hasilfix = hargaDiskon  - hitungHasilDsikon; 
+    let nama = document.getElementById('nama').value;
+    let alamat =document.getElementById('alamat').value;
+    let nomer = document.getElementById('nomer').value;
+    let submitwacart1 = document.getElementById('submitwacart1')
+  
+  let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
+  let hasilfix = totalbelanjacart  - hitungHasilDsikon; 
 
-  output.innerHTML = `<p> HALO COSTUMER <span style="color:blue">${nama}</span> TOTAL HARGA ANDA RP.<span style="color:red">${hargaDiskon}.000</span> BELUM DAPAT DISKON NIH , BELANJA MIN 200k YA! , DAN TOTAL YANG DI BAYARKAN RP.<span style="color:red">${hasilfix}.000</span></p>`
+  output.innerHTML = `<p> HALO COSTUMER <span style="color:blue">${nama}</span> TOTAL HARGA ANDA RP.<span style="color:red">${totalbelanjacart}.000</span> BELUM DAPAT DISKON NIH , BELANJA MIN 200k YA! , DAN TOTAL YANG DI BAYARKAN RP.<span style="color:red">${hasilfix}.000</span></p>`
   let submit1 = document.getElementById('submit1');
-  submit1.style.display="block"
+  submitwacart1.style.display="block"
+  
   
   }
 
@@ -1440,39 +1666,30 @@ function tomboltutup(){
     else{
        
   hitungDiskon()
+  totalbelanjacart = hargaDiskon + hargaDiskon2 
+    let nama = document.getElementById('nama').value;
+    let alamat =document.getElementById('alamat').value;
+    let nomer = document.getElementById('nomer').value;
+    let submitwacart1 = document.getElementById('submitwacart1')
   
-  let hitungHasilDsikon = hargaDiskon * (getDiskoncart/100);
-  let hasilfix = hargaDiskon  - hitungHasilDsikon; 
+  let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
+  let hasilfix = totalbelanjacart  - hitungHasilDsikon; 
 
-  output.innerHTML = `halo costumer ${nama}  TOTAL HARGA ANDA RP.${hargaDiskon}.000 dan dapat diskon ${getDiskoncart}% dan total di bayarkan RP.${hasilfix}.000`
+  output.innerHTML = `<p>halo costumer ${nama}  TOTAL HARGA ANDA RP.${totalbelanjacart}.000 dan dapat diskon ${getDiskoncart}% dan total di bayarkan RP.${hasilfix}.000</p>`
   let submit1 = document.getElementById('submit1');
+  
 
-  submit1.style.display="block"
+  submitwacart1.style.display="block"
   
     }
 
-  
   
   }
 
 
 
 // TOMBOL WA CART//
-function submitwacart(){
 
-  let nama = document.getElementById('nama').value;
-  let alamat =document.getElementById('alamat').value;
-  let nomer = document.getElementById('nomer').value;
-  hitungDiskon()
-  let totalBelanja8 = hargaDiskon;
-  let hitungHasilDsikon = totalBelanja8 * (getDiskoncart/100);
-  let hasilfix = totalBelanja8 - hitungHasilDsikon; 
-
-  const number = "6281399549218"
-   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${hargaDiskon}.000 Dan Dapat Diskon${getDiskoncart}% total di bayarkan menjadi Rp${hasilfix}.000`
-  const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
-  window.open(linkWA, '_blank');
-}
 
 
 function bttutupinfo(){
@@ -2002,6 +2219,7 @@ let hasilfix = Math.max( totalBelanja1 - hitungHasilDsikon );
 // HITUNG DISKON//
 getDiskon = 0;
 getDiskoncart = 0;
+let totalbelanjacart = hargaDiskon + hargaDiskon2
 function hitungDiskon(){
   
 let totalBelanja2 = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
@@ -2011,7 +2229,7 @@ if(totalBelanja2 >= 1000 ){
   
 }
 
-else if( hargaDiskon > 1000){
+else if( totalbelanjacart >= 1000  ){
   getDiskoncart >= 55
 
 }
@@ -2021,7 +2239,7 @@ else if(totalBelanja2 >=500 ){
   
 }
 
-else if(hargaDiskon >= 500){
+else if(totalbelanjacart>= 500){
   getDiskoncart = 40
 
 }
@@ -2031,7 +2249,7 @@ else if(totalBelanja2 >= 200 ){
 
 }
 
-else if(hargaDiskon >=200){
+else if(totalbelanjacart >=200){
   getDiskoncart =10
 
 }
