@@ -218,7 +218,7 @@ gap: 20px;
 }
 
 #totalharga{
-  transform: translateY(100px);
+transform: translateY(100px);
 width: 100px;
 height: 50px;
 position: absolute;
@@ -228,7 +228,7 @@ border-radius: 10px;
 background-color: green;
 color: white;
 filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
-
+display: none;
 }
 
 .panelTotal{
@@ -463,7 +463,7 @@ font-weight: 900;
   width: 500px;
   transform: translateY(-120px);
 
-  display: none;
+  display: block;
   flex-direction: column;
   flex-wrap: wrap;
   overflow-y: auto;
@@ -633,12 +633,24 @@ padding: 10px;
 }
 
 
-#gambarkosong{
-  display:none;
+.gambarkosong{
+  display: none;
   position: absolute;
   z-index: -1;
 }
 
+.classaddpesancart{
+  position: absolute;
+  z-index: 1100;
+  transform: translateY(240px);
+  background-color: green;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -778,8 +790,9 @@ padding: 10px;
 <div class="indukpesanmenu">
 
   <div id="wadahpanelcart" class="panelcart">
-  
+  <img id="gambarkosong" class="gambarkosong"  src="image/halamn kosong.png">
   </div>
+  <button class="classaddpesancart" onclick="addpesancart()">PESAN</button>
   
 
 <div class="pesanmenu">
@@ -806,7 +819,7 @@ padding: 10px;
 
 <!--cart-->
 <p class="cartp" onclick="cartbt1()">
-<svg onclick="cartbt1()"  xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
+<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
 </p>
@@ -1226,6 +1239,34 @@ padding: 10px;
 
 <script>
 
+jumlah = 1;
+hargaDiskon = 100;
+jumlah2 =1;
+let kosong1 = 0;
+let kosong2 = 0;
+hargaDiskon2 = 100;
+
+let gambarkosong = document.getElementById('gambarkosong')
+
+
+ 
+function addpesancart(){
+
+ 
+  cekjumlah = kosong1 + kosong2;
+if(cekjumlah == 0){
+  alert("masih kosong")
+ 
+}
+
+else{
+  alert("sudah di isi")
+  
+}
+ }
+
+
+
  function tutupucapan(){
   let panelucapan = document.getElementById('panelucapan');
    panelucapan.style.display="none"
@@ -1295,21 +1336,20 @@ function infocek(){
 
 //TOMBOL CART//
 
-jumlah =1;
-hargaDiskon = 100;
 let divoren
 
 
 function cartbt1(notetotaluser1){
 
-  totalBelanja7 =  harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
   let gambarmakanan1 = document.getElementById('gambarmakanan1');
   let namamakanan1 = document.getElementById('namamakanan1');
   let hargamakan1 = document.getElementById('hargamakan1');
   let tutupbt = document.getElementById('infotutupyo');
+  let gambarkosong = document.getElementById('gambarkosong')
+  gambarkosong.style.display="none"
 
-
- 
+  kosong1 = Math.floor(kosong1 + 1)
+   console.log(kosong1)
 
  wadahpanelcart.innerHTML=""
 
@@ -1350,7 +1390,7 @@ btplus.style.transform="translateX(390px)translateY(35px)"
 btplus.style.width= "20px"
 btplus.addEventListener("click", function(){
   hargaDiskon = Math.max(hargaDiskon + 100 , 0)
- 
+
   jumlah = jumlah + 1
   btmin.innerHTML= jumlah
  
@@ -1358,10 +1398,10 @@ btplus.addEventListener("click", function(){
 
   if(hargaDiskon < 1 ){
     alert("PESAN DULU YA KE KERANJANG!")
-   pesancart.style.display="none"
+ 
 
   }
-  pesancart.style.display="block"
+
 
 
 })
@@ -1376,14 +1416,17 @@ btkurang.style.transform="translateX(460px)translateY(35px)"
 btkurang.style.width= "20px"
 
 btkurang.addEventListener("click", function(){
+
   jumlah = Math.max(jumlah - 1,0)
-  btmin.innerHTML= jumlah
   
+  btmin.innerHTML= jumlah
+
   hargaDiskon = Math.max(hargaDiskon - 100,0)
-  console.log(harga1)
+  kosong1 =  Math.max(kosong1 - 1,0)
+  console.log(kosong1)
 
   if(jumlah == 0){
-    pesancart.style.display="none"
+    
     div.remove()
    
  
@@ -1394,37 +1437,7 @@ btkurang.addEventListener("click", function(){
 
 
 // TOMBOL ADD PESAN//
-const pesancart = document.createElement('button');
-  
-pesancart.className="classpesancart"
-pesancart.style.transform="translateY(300px)"
-pesancart.innerHTML="PESAN"
-pesancart.style.display="block"
 
-
-pesancart.addEventListener("click" , function (){
-let tutupbuttonya = document.getElementById('tutupbuttonya');
-tutupbuttonya.style.display="block"
-  let divoren = document.getElementById('divoren')
-  divoren.style.display="none"
-
-  let tombolcart = document.getElementById('tutupbuttonya')
-  let submitt = document.getElementById('submitt');
-  submitt.style.display="none"
-  tombolcart.style.display="block"
-
-
-  let paneltotalya = document.getElementById('paneltotalya');
-  paneltotalya.style.display="block";
-  wadahpanelcart.style.display="none"
-
-
- 
-
-
-
-})
- 
 
 //-------///
 
@@ -1434,7 +1447,7 @@ tutupbuttonya.style.display="block"
 
 
   div.appendChild(btmin)
-  div.appendChild(pesancart)
+
   wadahpanelcart.appendChild(div)
 
 }
@@ -1445,29 +1458,30 @@ tutupbuttonya.style.display="block"
 
 
 
-jumlah2 =1;
-hargaDiskon2 = 100;
 
 function cartbt2(notetotaluser1){
 
-  totalBelanja7 =  harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
+ 
   let gambarmakanan2 = document.getElementById('gambarmakanan2');
   let namamakanan2 = document.getElementById('namamakanan2');
   let hargamakan2 = document.getElementById('hargamakanan2');
   let tutupbt = document.getElementById('infotutupyo');
   let gambarkosong = document.getElementById('gambarkosong');
 
- 
+  `<span styele="display:none">${gambarkosong}</span>`
+
+  kosong2 = kosong2 + 1
   
-  let div = document.createElement('div');
-  div.className="classcart";
+  const diva = document.createElement('div');
+ 
+  diva.className="classcart";
 
 
-  div.innerHTML = `<p>
+  diva.innerHTML = `<p>
   
   <img src="${gambarmakanan2.src}">`
-  const div1 = document.createElement('div');
-  div1.innerHTML=` 
+  const div11 = document.createElement('div');
+  div11.innerHTML=` 
  <h2>${namamakanan2.innerHTML}</h2>
  <h3>${hargamakan2.innerHTML}</h3>
  </p>
@@ -1494,7 +1508,7 @@ btplus.style.transform="translateX(390px)translateY(35px)"
 btplus.style.width= "20px"
 btplus.addEventListener("click", function(){
   hargaDiskon2 = Math.max(hargaDiskon2 + 100 , 0)
- 
+
   jumlah2 = jumlah2 + 1
   btmin.innerHTML= jumlah2
  
@@ -1502,10 +1516,10 @@ btplus.addEventListener("click", function(){
 
   if(hargaDiskon2 < 1 ){
     alert("PESAN DULU YA KE KERANJANG!")
-   pesancart.style.display="none"
+  
 
   }
-  pesancart.style.display="block"
+
 
 
 })
@@ -1521,13 +1535,18 @@ btkurang.style.width= "20px"
 
 btkurang.addEventListener("click", function(){
   jumlah2 = Math.max(jumlah2 - 1, 0)
+  kosong2 =  Math.max(kosong2 - 1 , 0)
   btmin.innerHTML= jumlah2
   hargaDiskon2 = Math.max(hargaDiskon2 - 100,0)
   console.log(harga1)
+  let gambarkosong = document.getElementById('gambarkosong')
 
-  if(jumlah2 == 0){
-    pesancart.style.display="none"
-    div.remove()
+  if(jumlah2 === 0){
+
+
+  `<span style="display:block">${gambarkosong}</span>`
+
+    diva.remove()
     
   }
 
@@ -1538,21 +1557,18 @@ btkurang.addEventListener("click", function(){
 // TOMBOL ADD PESAN//
 
 
- 
-
-
 
 
  
 
 //-------///
 
-  div.appendChild(btkurang)
-  div.appendChild(btplus)
-  div.appendChild(div1)
-  wadahpanelcart.appendChild(div)
-  div.appendChild(btmin)
-  div.appendChild(pesancart)
+  diva.appendChild(btkurang)
+  diva.appendChild(btplus)
+  diva.appendChild(div11)
+  wadahpanelcart.appendChild(diva)
+  diva.appendChild(btmin)
+
   
 }
 
