@@ -790,8 +790,7 @@ padding: 10px;
 <div class="indukpesanmenu">
 
   <div id="wadahpanelcart" class="panelcart">
-  <img id="gambarkosong" class="gambarkosong"  src="image/halamn kosong.png">
-  </div>
+
   <button class="classaddpesancart" onclick="addpesancart()">PESAN</button>
   
 
@@ -1246,7 +1245,7 @@ let kosong1 = 0;
 let kosong2 = 0;
 hargaDiskon2 = 100;
 
-let gambarkosong = document.getElementById('gambarkosong')
+
 
 
  
@@ -1345,8 +1344,7 @@ function cartbt1(notetotaluser1){
   let namamakanan1 = document.getElementById('namamakanan1');
   let hargamakan1 = document.getElementById('hargamakan1');
   let tutupbt = document.getElementById('infotutupyo');
-  let gambarkosong = document.getElementById('gambarkosong')
-  gambarkosong.style.display="none"
+  
 
   kosong1 = Math.floor(kosong1 + 1)
    console.log(kosong1)
@@ -1466,9 +1464,7 @@ function cartbt2(notetotaluser1){
   let namamakanan2 = document.getElementById('namamakanan2');
   let hargamakan2 = document.getElementById('hargamakanan2');
   let tutupbt = document.getElementById('infotutupyo');
-  let gambarkosong = document.getElementById('gambarkosong');
-
-  `<span styele="display:none">${gambarkosong}</span>`
+  
 
   kosong2 = kosong2 + 1
   
@@ -1539,12 +1535,12 @@ btkurang.addEventListener("click", function(){
   btmin.innerHTML= jumlah2
   hargaDiskon2 = Math.max(hargaDiskon2 - 100,0)
   console.log(harga1)
-  let gambarkosong = document.getElementById('gambarkosong')
+  
 
   if(jumlah2 === 0){
 
 
-  `<span style="display:block">${gambarkosong}</span>`
+
 
     diva.remove()
     
