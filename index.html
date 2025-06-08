@@ -447,11 +447,30 @@ font-weight: 900;
 
 .cart{
   transform: translateY(20px)translateX(-110px);
-
+   
 }
 
 .cartp{
   transform: translateY(-10px)translateX(-1px);
+  
+ 
+}
+
+
+.cartpdelete{
+
+  transform: translateY(-10px)translateX(-107px) translateY(20px);
+  position: absolute;
+   display: none;
+   color: green;
+}
+
+.cartpdelete2{
+ 
+  transform: translateY(-9px)translateX(-106px) translateY(28px);
+position: absolute;
+   display: none;
+   color: green;
 }
 
 .panelcart{
@@ -532,12 +551,13 @@ width: 50px;
 
 
 .infotutupya{
-  transform: translateY(240px) translateX(-10px);
+  transform: translateY(-460px) translateX(-240px);
   position: absolute;
   z-index: 100000;
   background-color: red;
   border-radius: 10px;
   display: none;
+  padding: 10px;
 }
 
 
@@ -650,6 +670,7 @@ padding: 10px;
   justify-content: center;
   border-radius: 10px;
   color: white;
+  display: none;
 }
   </style>
 </head>
@@ -788,9 +809,11 @@ padding: 10px;
 
 
 <div class="indukpesanmenu">
-  <div id="wadahpanelcart" class="panelcart"></div>
 
-  <button class="classaddpesancart" onclick="addpesancart()">PESAN</button>
+  <div id="wadahpanelcart" class="panelcart">
+  <img id="gambarkosong" class="gambarkosong"  src="image/halamn kosong.png">
+  </div>
+  <button   id="tombolpesancart"  class="classaddpesancart" onclick="addpesancart()">PESAN</button>
   
 
 <div class="pesanmenu">
@@ -816,12 +839,16 @@ padding: 10px;
 
 
 <!--cart-->
-<p class="cartp" onclick="cartbt1()">
-<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
+<p id="cartbthapus1"  class="cartp" onclick="cartbt1()">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
 </p>
-
+<p id="cartpdelete1" class="cartpdelete" onclick="cartbthapus1()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/>
+  </svg>
+</p>
 <!---->
 
 <p class="starp"> 4.9</p>
@@ -837,7 +864,7 @@ padding: 10px;
     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
   </svg></button>
   <div class="namamenu">
-    <p id="namamakanan2">dismum COKLAT</p>
+    <p id="namamakanan2">dismum coklat</p>
      <h5 id="hargamakanan2" >500</h5>
    </div>
    
@@ -850,10 +877,16 @@ padding: 10px;
     <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
   </svg></p>
   
-  <p  onclick="cartbt2()">
+  <p id="cartbthapus2" onclick="cartbt2()">
 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
+</p>
+
+<p    id="cartpdelete2" class="cartpdelete2" onclick="cartbthapus2()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/>
+  </svg>
 </p>
 
   <p class="starp"> 4.9</p>
@@ -1164,7 +1197,7 @@ padding: 10px;
 
 <!--info cart-->
 <div class="infocart">
-  <div class="anakinfocart">
+  <div  id="targetinfocart" class="anakinfocart">
   <p onclick="infocek()">
     <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
@@ -1175,7 +1208,9 @@ padding: 10px;
 </div>
 </div>
 
-<button  id="infotutupyo" class="infotutupya"  onclick="bttutupinfo()">TUTUPI</button>
+<button  id="infotutupyo" class="infotutupya"  onclick="bttutupinfo()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+</svg></button>
 
 
 <div id="paneltotalya"  class="panelTotal">
@@ -1238,12 +1273,12 @@ padding: 10px;
 <script>
 
 jumlah = 1;
-hargaDiskon = 100;
+
 jumlah2 =1;
 let kosong1 = 0;
 let kosong2 = 0;
-hargaDiskon2 = 100;
 
+hargaDiskon = 0;
 
 
 
@@ -1251,14 +1286,24 @@ hargaDiskon2 = 100;
 function addpesancart(){
 
  
-  cekjumlah = kosong1 + kosong2;
+cekjumlah = kosong1 + kosong2;
 if(cekjumlah == 0){
   alert("masih kosong")
  
 }
 
 else{
-  alert("sudah di isi")
+ let paneltotalya = document.getElementById('paneltotalya');
+ paneltotalya.style.display="block"
+ let tombolpesancart = document.getElementById('tombolpesancart');
+ tombolpesancart.style.display="none"
+ let wadahpanelcart = document.getElementById('wadahpanelcart');
+ wadahpanelcart.style.display="none"
+ let tutupbuttonya = document.getElementById('tutupbuttonya');
+ tutupbuttonya.style.display="block"
+ let submit = document.getElementById('submitt');
+ submit.style.display="none"
+ let infotutupyo = document.getElementById('infotutupyo').style.display="none";
   
 }
  }
@@ -1316,7 +1361,8 @@ function infocek(){
   tutupbt.style.display="block"
   let hargatotal = document.getElementById('totalharga');
   hargatotal.style.display="none"
-
+ let tombolpesancart = document.getElementById('tombolpesancart')
+ tombolpesancart.style.display="block"
   wadahpanelcart.scrollIntoView({behavior:"smooth"})
   
   
@@ -1343,12 +1389,22 @@ function cartbt1(notetotaluser1){
   let namamakanan1 = document.getElementById('namamakanan1');
   let hargamakan1 = document.getElementById('hargamakan1');
   let tutupbt = document.getElementById('infotutupyo');
+  let cartbthapus1 = document.getElementById('cartbthapus1');
+  cartbthapus1.style.display="none"
+  let cartpdelete1 = document.getElementById('cartpdelete1');
+  cartpdelete1.style.display="block"
   
+  let targetinfocart = document.getElementById('targetinfocart').scrollIntoView({behavior:"smooth"});
+  alert("berhasil di tambahkan ke keranjang")
+  
+  
+  hargaDiskon = hargaDiskon + 100
+  console.log(`hargadiskon = ${ hargaDiskon}`)
 
   kosong1 = Math.floor(kosong1 + 1)
    console.log(kosong1)
 
- wadahpanelcart.innerHTML=""
+
 
   let div = document.createElement('div');
   div.className="classcart";
@@ -1422,8 +1478,12 @@ btkurang.addEventListener("click", function(){
   kosong1 =  Math.max(kosong1 - 1,0)
   console.log(kosong1)
 
+  cartbthapus1 = document.getElementById('cartbthapus1');
+  cartpdelete1 = document.getElementById('cartpdelete1');
+
   if(jumlah == 0){
-    
+    cartbthapus1.style.display="block"
+    cartpdelete1.style.display="none"
     div.remove()
    
  
@@ -1450,20 +1510,40 @@ btkurang.addEventListener("click", function(){
 }
 
 
+// TOMBOL KLIK HIJAU //
+function cartbthapus1(){
+  alert("SUDAH DI TAMBAHKAN KERANJANG")
+}
+//
+
+// TOMBOL KLIK HIJAU
+
+function cartbthapus2(){
+  alert("SUDAH DI TAMBAHKAN KERANJANG")
+}
+//
+
 //CARTBT2//
 
 
 
+hargaDiskon2 = 0;
 
-
-function cartbt2(notetotaluser1){
+function cartbt2(){
 
  
   let gambarmakanan2 = document.getElementById('gambarmakanan2');
   let namamakanan2 = document.getElementById('namamakanan2');
   let hargamakan2 = document.getElementById('hargamakanan2');
   let tutupbt = document.getElementById('infotutupyo');
-  
+  let cartp = document.getElementById('cartbthapus2');
+  cartp.style.display="none"
+  let cartpdelete = document.getElementById('cartpdelete2');
+  cartpdelete.style.display="block"
+
+
+ hargaDiskon2 = hargaDiskon2 + 100 ;
+ console.log(`hargadiskon2 = ${hargaDiskon}` )
 
   kosong2 = kosong2 + 1
   
@@ -1534,15 +1614,19 @@ btkurang.addEventListener("click", function(){
   btmin.innerHTML= jumlah2
   hargaDiskon2 = Math.max(hargaDiskon2 - 100,0)
   console.log(harga1)
+  let gambarkosong = document.getElementById('gambarkosong')
   
-
   if(jumlah2 === 0){
+let cartp = document.getElementById('cartbthapus2');
+  cartp.style.display="block"
 
 
+  let cartpdelete = document.getElementById('cartpdelete2');
+  cartpdelete.style.display="none"
 
 
     diva.remove()
-    
+    console.log("hijau hilang")
   }
 
 
@@ -1575,7 +1659,7 @@ btkurang.addEventListener("click", function(){
 let output
 
 function tomboltutup(){
-
+ 
   totalbelanjacart = hargaDiskon + hargaDiskon2
   
   let output = document.getElementById('output');
@@ -1583,56 +1667,22 @@ function tomboltutup(){
   output.style.transform="translateY(310px)translateX(50px)"
  
   
-  submitwacart1.addEventListener("click" , function(){
-
-
-    if(getDiskoncart === 0){
-      
-    let nama = document.getElementById('nama').value;
-    let alamat =document.getElementById('alamat').value;
-    let nomer = document.getElementById('nomer').value;
-    let submitwacart1 = document.getElementById('submitwacart1')
-     
-   let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
-   let hasilfix = totalbelanjacart  - hitungHasilDsikon;  
- 
-   const number = "6281399549218"
-   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalbelanjacart}.000 , BELUM DAPAT DISKON NIH ,total di bayarkan menjadi Rp${hasilfix}.000`
-   const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
-   window.open(linkWA, '_blank');
-    }
-
-    else{
-
-    let nama = document.getElementById('nama').value;
-    let alamat =document.getElementById('alamat').value;
-    let nomer = document.getElementById('nomer').value;
-    let submitwacart1 = document.getElementById('submitwacart1')
-     
-   let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
-   let hasilfix = totalbelanjacart  - hitungHasilDsikon; 
- 
-   const number = "6281399549218"
-   let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalbelanjacart}.000 Dan Dapat Diskon${getDiskoncart}% total di bayarkan menjadi Rp${hasilfix}.000`
-   const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
-   window.open(linkWA, '_blank');
-    }
-    
-   })
-   
  
  
 
 
 
-  hitungDiskon()
+  hitungDiskoncart()
+  console.log(`dapat diskon ${getDiskoncart}`)
   if(nama ===""  && alamat === ""  && nomer ===""){
   alert("ISI SEMUA DENGAN LENGKAP")
   }
 
+
+
   else if(getDiskoncart === 0){
     
-  hitungDiskon()
+    hitungDiskoncart()
   totalbelanjacart = hargaDiskon + hargaDiskon2
   
     let nama = document.getElementById('nama').value;
@@ -1643,7 +1693,7 @@ function tomboltutup(){
   let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
   let hasilfix = totalbelanjacart  - hitungHasilDsikon; 
 
-  output.innerHTML = `<p> HALO COSTUMER <span style="color:blue">${nama}</span> TOTAL HARGA ANDA RP.<span style="color:red">${totalbelanjacart}.000</span> BELUM DAPAT DISKON NIH , BELANJA MIN 200k YA! , DAN TOTAL YANG DI BAYARKAN RP.<span style="color:red">${hasilfix}.000</span></p>`
+  output.innerHTML = `<p> HALOi COSTUMER <span style="color:blue">${nama}</span> TOTAL HARGA ANDA RP.<span style="color:red">${totalbelanjacart}.000</span> BELUM DAPAT DISKON NIH , BELANJA MIN 200k YA! , DAN TOTAL YANG DI BAYARKAN RP.<span style="color:red">${hasilfix}.000</span></p>`
   let submit1 = document.getElementById('submit1');
   submitwacart1.style.display="block"
   
@@ -1653,7 +1703,7 @@ function tomboltutup(){
 
     else{
        
-  hitungDiskon()
+      hitungDiskoncart()
   totalbelanjacart = hargaDiskon + hargaDiskon2 
     let nama = document.getElementById('nama').value;
     let alamat =document.getElementById('alamat').value;
@@ -1670,6 +1720,46 @@ function tomboltutup(){
   submitwacart1.style.display="block"
   
     }
+
+
+    
+  submitwacart1.addEventListener("click" , function(){
+
+    
+if(getDiskoncart === 0){
+  
+let nama = document.getElementById('nama').value;
+let alamat =document.getElementById('alamat').value;
+let nomer = document.getElementById('nomer').value;
+let submitwacart1 = document.getElementById('submitwacart1')
+ 
+let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
+let hasilfix = totalbelanjacart  - hitungHasilDsikon;  
+
+const number = "6281399549218"
+let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalbelanjacart}.000 , BELUM DAPAT DISKON NIH ,total di bayarkan menjadi Rp${hasilfix}.000`
+const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
+window.open(linkWA, '_blank');
+}
+
+else{
+
+let nama = document.getElementById('nama').value;
+let alamat =document.getElementById('alamat').value;
+let nomer = document.getElementById('nomer').value;
+let submitwacart1 = document.getElementById('submitwacart1')
+ 
+let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
+let hasilfix = totalbelanjacart  - hitungHasilDsikon; 
+
+const number = "6281399549218"
+let pesan =  `halo ${nama} ALAMAT ANDA ${alamat} dan Total Pesanan Anda Rp${totalbelanjacart}.000 Dan Dapat Diskon${getDiskoncart}% total di bayarkan menjadi Rp${hasilfix}.000`
+const linkWA = `https://wa.me/${number}?text=${encodeURIComponent(pesan)}`;
+window.open(linkWA, '_blank');
+}
+
+})
+
 
   
   }
@@ -1900,7 +1990,7 @@ function lihatListHargaYa(){
   
 // TAMBAH MENU //
   harga1 = 0;
-  hargaDiskon = 100;
+
   function addMenu1(){
     harga1 = harga1 + 100
     let litaharga1 = document.getElementById('litaharga1').innerText = `RP.${harga1}.000`
@@ -2206,49 +2296,52 @@ let hasilfix = Math.max( totalBelanja1 - hitungHasilDsikon );
 
 // HITUNG DISKON//
 getDiskon = 0;
-getDiskoncart = 0;
-let totalbelanjacart = hargaDiskon + hargaDiskon2
+
 function hitungDiskon(){
   
 let totalBelanja2 = harga1 + harga2 + harga3 + harga4 + harga5 + harga6 + harga7 + harga8 +harga9 + harga10 + harga11 + harga12 +harga13 + harga14;
 if(totalBelanja2 >= 1000 ){
   getDiskon = 55
-
-  
 }
 
-else if( totalbelanjacart >= 1000  ){
-  getDiskoncart >= 55
-
-}
 
 else if(totalBelanja2 >=500 ){
   getDiskon = 40
-  
 }
 
-else if(totalbelanjacart>= 500){
-  getDiskoncart = 40
-
-}
 
 else if(totalBelanja2 >= 200 ){
   getDiskon = 10
-
 }
 
-else if(totalbelanjacart >=200){
-  getDiskoncart =10
-
-}
 
 else{
   getDiskon = 0
-  getDiskoncart= 0
-  alert("BELUM DAPAT DISKON");
+ alert("BELUM DAPAT DISKON");
+}
 }
 
 
+
+getDiskoncart = 0;
+let totalbelanjacart = hargaDiskon + hargaDiskon2
+function hitungDiskoncart(){
+  if(totalbelanjacart >=1000){
+    getDiskoncart = 55;
+  }
+
+  else if( totalbelanjacart >= 500){
+    getDiskoncart = 40;
+  }
+
+  else if( totalbelanjacart >=200){
+    getDiskoncart = 10
+  }
+
+  else{
+    alert("cart belum dapat diskon")
+    getDiskoncart = 0;
+  }
 }
 
 
