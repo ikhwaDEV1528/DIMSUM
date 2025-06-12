@@ -184,6 +184,8 @@ height: 1000px;
 gap: 130px;
 }
 
+
+
 .pesanmenu{
   transform: translateY(-10px);
   background-color: rgb(225, 210, 190); /* #e1d2be */
@@ -228,7 +230,7 @@ border-radius: 10px;
 background-color: green;
 color: white;
 filter: drop-shadow(10px 5px 6px  rgb(56, 65, 57));
-display: none;
+display: block;
 }
 
 .panelTotal{
@@ -244,23 +246,61 @@ display: none;
   justify-content: center;
   flex-wrap: wrap;
   display: none;
-  
+  animation: muncul 1s ease-out;
+   
+}
 
+@keyframes muncul{
+  from{
+   transform: translateY(-820px) translateX(50px) scale(0.5);
+  }
+
+  to{
+   transform: translateY(-820px) translateX(50px) scale(1);
+   
+  }
+}
+
+.gelombangwa{
+  background-color: rgb(189, 227, 201);
+  transform: translateY(380px)translateX(130px);
+  position:absolute;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  animation: gelombangwaya 1.3s infinite alternate ease-out;
 }
 
 
+@keyframes gelombangwaya{
+  from{ transform: translateY(380px)translateX(120px) scale(0.6);}
+
+  to{  transform: translateY(380px)translateX(120px) scale(1);}
+}
+
 
 .submitwacart{
+ 
   background-color: green;
   color:white;
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  padding: 9px;
   border-radius:11px;
-  transform: translateX(150px)translateY(400px);
-  align-items: center;
+  transform: translateX(155px)translateY(380px);
+  border-radius: 100%;
+ position: absolute;
   display: flex;
-  flex-direction: column;
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .inputpaneltotal{
@@ -272,28 +312,26 @@ display: none;
   gap: 10px;
   width: 400px;
   height: 200px;
- 
+
 }
 
 
 .panelTotal input{
   border-radius:20px;
-
+   position:relative;
   padding: 10px;
   transform: translateY(20px);
  
 }
 
-#output{
-  position: absolute;
-}
-
 .submit{
   width: 50px;
-  background-color: green;
+  background-color: rgb(0, 13, 0);
   color: white;
   border-radius: 10px;
-  transform: translateX(160px) translateY(20px);
+  transform: translateX(140px) translateY(20px);
+  padding: 10px;
+  width: 100px;
 }
 
 .buttontutupaddtotal{
@@ -314,7 +352,8 @@ padding: 5px;
   width: 40px;
   color: white;
   border-radius: 10px;
-  transform: translateY(-455px) translateX(-630px);
+  transform: translateY(-545px) translateX(-580px);
+  
 }
 
 .kurangi{
@@ -459,11 +498,13 @@ font-weight: 900;
 
 .cartpdelete{
 
-  transform: translateY(-10px)translateX(-107px) translateY(20px);
+  transform: translateY(-5px)translateX(-107px) translateY(20px);
   position: absolute;
    display: none;
-   color: green;
+  color: green;
+  fill: green;
 }
+
 
 .cartpdelete2{
  
@@ -589,13 +630,16 @@ padding: 10px;
   background-color: black;
   color: white;
   border-radius: 5px;
-  transform: translateY(-130px) translateX(-155px);
+  transform: translateY(130px) translateX(140px);
+  position: absolute;
+ 
 }
 
 .jamwaktu{
   width: 500px;
   height: 500px;
   position: absolute;
+
   z-index: -1;
 }
 
@@ -604,42 +648,47 @@ padding: 10px;
   position: absolute;
   background-color: black;
   color: white;
-  height: 400px;
+  height: 200px;
   width: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  transform: translateY(-140px);
+  transform: translateY(-1440px);
   animation: ucapan 2s ease-out;
 }
 
 
 .panelucapan button{
   position: absolute;
-  transform: translateY(200px);
+  transform: translateY(100px);
   background-color: red;
   color: white;
 }
 
 @keyframes ucapan{
   from{
-    transform: translateY(-140px) scale(0.5);
+    transform: translateY(-1440px)scale(0.5);
   }
 
   to{
-    transform: translateY(-140px)  scale(1);
+    transform: translateY(-1440px)  scale(1);
+    animation-delay: 5s;
   }
 }
 
-.wadahoutputclass{
-  background-color: red;
-}
 
-.outputclass , .divorenclass{
+.outputclass{
   position: absolute;
-  transform: translateY(320px)translateX(300px);
-  
+  transform: translateY(320px)translateX(-10px);
+
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+  height: 100px;
+
 }
 
 
@@ -650,6 +699,16 @@ padding: 10px;
   height: 100px;
   position: relative;
 
+}
+
+#backtocart{
+  background-color: rgb(3, 63, 22);
+  border-radius: 20px;
+  color: white;
+  position: absolute;
+  padding: 10px;
+  z-index: 100;
+  transform: translateY(440px) translateX(50px);
 }
 
 
@@ -672,6 +731,88 @@ padding: 10px;
   color: white;
   display: none;
 }
+
+#wadahoutput1{
+display: flex;
+text-align: center;
+align-items: center !important;
+flex-wrap: wrap;
+display: block;
+z-index: 1000px;
+position: relative;
+height: 50px;
+
+transform: translateY(370px);
+
+}
+
+#geser{
+  transform: translateY(-40px);
+}
+
+#geserkanan{
+    transform: translateY(-40px) translateX(100px);
+}
+
+.animasiindukpesan{
+  background-color: green;
+  display: flex;
+justify-content: center;
+position: relative;
+align-items: center;
+flex-wrap:wrap;
+animation: geser 1s infinite ease-out;
+
+
+width: 1500px;
+height: 1000px;
+gap: 130px;
+
+}
+
+@keyframes geser{
+  from{transform: translateX(0px);
+
+  }
+
+  to{
+    transform: translateX(-1700px);
+   
+  }
+}
+
+
+
+.animasiindukpesankanan{
+background-color: rgb(128, 55, 0);
+display: flex;
+justify-content: center;
+
+align-items: center;
+flex-wrap:wrap;
+animation: geserkanan 1s infinite ease-out;
+
+
+width: 1500px;
+height: 1000px;
+gap: 130px;
+
+}
+
+@keyframes geserkanan{
+  from{transform: translateX(0px);
+
+  }
+
+  to{
+    transform: translateX(0px);
+   
+  }
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -807,8 +948,14 @@ padding: 10px;
   <button class="closediskon"onclick="tutupDiskon()">TUTUP</button>
 </div>
 
+<!--indukpesanmenu2-->
 
-<div class="indukpesanmenu">
+
+
+
+
+
+<div class="indukpesanmenu" id="indukpesanmenu">
 
   <div id="wadahpanelcart" class="panelcart">
   <img id="gambarkosong" class="gambarkosong"  src="image/halamn kosong.png">
@@ -914,10 +1061,18 @@ padding: 10px;
     <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
   </svg></p>
   
+
+  <div id="cartbthapus3" onclick="cartbt3()">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
-
+</div>
+<div id="cartpdelete3" class="cartpdelete" onclick="cartpdelete3()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+  </svg>
+</div>
   <p class="starp"> 4.9</p>
   </div>
 </div>
@@ -943,10 +1098,19 @@ padding: 10px;
     <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
   </svg></p>
   
+
+  <div id="cartbthapus4"  onclick="cartbt4()">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
+</div>
 
+<div class="cartpdelete" id="cartpdelete4" onclick="cartpdelete4()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+  </svg>
+</div>
   <p class="starp"> 4.9</p>
   </div>
 </div>
@@ -971,11 +1135,21 @@ padding: 10px;
   <p id="starputih5" onclick="starputihbt5()" class="starsv1"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi" viewBox="0 0 16 16">
     <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
   </svg></p>
+
+
   
-  
+  <div id="cartbthapus5" onclick="cartbt5()">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
+</div>
+
+<div class="cartpdelete" id="cartpdelete5">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+  </svg>
+</div>
 
   <p class="starp"> 4.9</p>
   </div>
@@ -1002,11 +1176,18 @@ padding: 10px;
     <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
   </svg></p>
 
-  
+  <div onclick="cartbt6()" id="cartbthapus6">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
-  
+</div>
+
+<div class="cartpdelete" id="cartpdelete6">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+  </svg>
+</div>
   <p class="starp"> 4.9</p>
   </div>
 </div>
@@ -1032,11 +1213,17 @@ padding: 10px;
     <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
   </svg></p>
 
-  
+<div id="cartbthapus7" onclick="cartbt7()">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor" class="cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
-  
+  </div>
+  <div class="cartpdelete"  id="cartpdelete7">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+  </svg>
+  </div>
   <p class="starp"> 4.9</p>
   </div>
 </div>
@@ -1189,9 +1376,13 @@ padding: 10px;
     </div>
 </div>
 
+<!--indukpesan2-->
+
+
+
 <!--UCAPAN-->
 <div class="panelucapan"  id="panelucapan">
-  <h2 id="h2ucapan">HALO</h2>
+  <h2 id="h2ucapan"></h2>
   <button onclick="tutupucapan()">TUTUP</button>
 </div>
 
@@ -1219,42 +1410,53 @@ padding: 10px;
 <input id="nama" type="text"placeholder="masukan nama anda">
 <input id="alamat" type="text"placeholder="masukan Alamat anda">
 <input id="nomer" type="text" placeholder="masukan nomer telfon anda ">
-<button  id="submitt"  class="submit" onclick="submit()">add</button>
+<button  id="submitt"  class="submit" onclick="submit()">ENTER</button>
 <button id="submit1"  class="submit1" onclick="submit1()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
   <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
 </svg>PESAN WAi</button>
 <!--PESAN WA TOMBOL-->
+
+
 <button  class="submitwacart" id="submitwacart1" onclick="submitwacart()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
   <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
 </svg> PESAN WA</button>
-<button id="tutupbuttonya" class="tutupbuttonyaclass" onclick="tomboltutup()">ENTERi</button>
+<button id="tutupbuttonya" class="tutupbuttonyaclass" onclick="tomboltutup()">ENTER</button>
+<div id="gelombangwa" class="gelombangwa">
+</div>
+
 
 </div>
 
 <div id="notetotaluser" class="notetotaluser">
+ 
 
 </div>
+
+
 
 <div class="buttontutupaddtotal">
   <button id="tutupyapanel" onclick="tutupAddTotal()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
   </svg></button>
 </div>
-<div   , class="ouputclass"  id="output">
 
+<div  class="wadahoutput1" id="wadahoutput1">
+<div  class="ouputclass"  id="output"></div>
 </div>
 
 <div id="divoren"  class="divorenclass">
 
 </div>
-
+<button id="backtocart">KEMBALI</button>
 </div>
+
 
 
 <div class="addharga">
   <button id="totalharga"  class="totalhargaclass"onclick="addTotal()">Add Total</button>
 </div>
 </div>
+<!--AKHIR DIV PESAN MENU-->
 
 <div class="baner">
   <img src="https://raw.githubusercontent.com/ikhwaDEV1528/DIMSUM/main/baner.png">
@@ -1276,15 +1478,36 @@ padding: 10px;
 
 
 
+//backtocart tombol kembalicart//
+let backtocart = document.getElementById('backtocart');
+backtocart.addEventListener("click" , function(){
+  let output = document.getElementById('output');
+  output.style.display="none"
+  let panelcart = document.getElementById('wadahpanelcart');
+  panelcart.style.display="block";
+  let paneltotalya = document.getElementById('paneltotalya');
+  paneltotalya.style.display="none";
+  let tombolpesancart = document.getElementById('tombolpesancart');
+  tombolpesancart.style.display="block"
+})
+
+
 
 
 jumlah = 1;
-
 jumlah2 =1;
+jumlah3 = 1;
+jumlah4 = 1;
+
 let kosong1 = 0;
 let kosong2 = 0;
+let kosong3=  0;
+let kosong4 = 0;
 
-hargaDiskon = 0;
+hargaDiskon =  0;
+hargaDiskon2 = 0;
+hargaDiskon3 = 0;
+
 
 
 
@@ -1292,7 +1515,8 @@ hargaDiskon = 0;
 function addpesancart(){
 
  
-cekjumlah = kosong1 + kosong2;
+cekjumlah = kosong1 + kosong2  + kosong3 + kosong4 + kosong5;
+
 if(cekjumlah == 0){
   alert("masih kosong")
  
@@ -1321,6 +1545,8 @@ else{
    panelucapan.style.display="none"
  }
 
+ 
+
 
    setInterval(() => {
   
@@ -1340,21 +1566,23 @@ else{
       let wadahucapan = document.getElementById('panelucapan');
       let ucapanh2 = document.getElementById('h2ucapan');
 
-      if(ini >= "06:00:00"){
-        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT PAGI"
-      }
-
-      else if(ini >= "10:00:00"){
-        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT SIANG"
+      if(ini >= "01:00:00"){
+        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT MALAM"
       }
 
       else if(ini >= "15:00:00"){
         let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT SORE"
       }
 
-      else{
-        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT MALAM"
+      else if(ini >= "10:00:00"){
+        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT SIANG"
       }
+
+      else if(ini >= "06:00:00"){
+        let ucapanh2 = document.getElementById('h2ucapan').innerText="HALO SELAMAT PAGI"
+      } return;
+
+      
     }
 
     let div;
@@ -1405,10 +1633,10 @@ function cartbt1(notetotaluser1){
   
   
   hargaDiskon = hargaDiskon + 100
-  console.log(`hargadiskon = ${ hargaDiskon}`)
+
 
   kosong1 = Math.floor(kosong1 + 1)
-   console.log(kosong1)
+ 
 
 
 
@@ -1481,15 +1709,15 @@ btkurang.addEventListener("click", function(){
   btmin.innerHTML= jumlah
 
   hargaDiskon = Math.max(hargaDiskon - 100,0)
-  kosong1 =  Math.max(kosong1 - 1,0)
-  console.log(kosong1)
-
+ 
   cartbthapus1 = document.getElementById('cartbthapus1');
   cartpdelete1 = document.getElementById('cartpdelete1');
 
   if(jumlah == 0){
     cartbthapus1.style.display="block"
     cartpdelete1.style.display="none"
+    kosong1 = 0;
+    alert(`kosong1 = ${kosong1}`)
     div.remove()
    
  
@@ -1527,13 +1755,555 @@ function cartbthapus1(){
 function cartbthapus2(){
   alert("SUDAH DI TAMBAHKAN KERANJANG")
 }
+
+
 //
 
-//CARTBT2//
+
+let hargaDiskon4 =0;
+jumlah4 = 1
+kosong4 = 0
+function cartbt4(){
+
+
+let gambarmakanan1 = document.getElementById('gambarmakanan1');
+let namamakanan1 = document.getElementById('namamakanan1');
+let hargamakan1 = document.getElementById('hargamakan1');
+let tutupbt = document.getElementById('infotutupyo');
+let cartbthapus1 = document.getElementById('cartbthapus4');
+cartbthapus1.style.display="none"
+let cartpdelete1 = document.getElementById('cartpdelete4');
+cartpdelete1.style.display="block"
+
+let targetinfocart = document.getElementById('targetinfocart').scrollIntoView({behavior:"smooth"});
+alert("berhasil di tambahkan ke keranjang")
+
+
+hargaDiskon4 = hargaDiskon4 + 100
+console.log(`hargadiskon = ${ hargaDiskon4}`)
+
+kosong4 = Math.floor(kosong4 + 1)
+ console.log(kosong4)
 
 
 
-hargaDiskon2 = 0;
+let div = document.createElement('div');
+div.className="classcart";
+
+div.innerHTML = `<p><img src="${gambarmakanan1.src}">`
+
+
+// BUTA WADAH TULISAN NAMA MENU DAN HARGA//
+const div1 = document.createElement('div');
+div1.innerHTML= `
+
+
+<h2>${namamakanan1.innerHTML}</h2>
+<h3>${hargamakan1.innerHTML}</h3>
+</p>
+
+`
+
+//TOMBOL PESAN//
+const btmin = document.createElement('button')
+
+
+
+btmin.innerHTML= 1
+
+
+
+
+//
+
+//TOMBOL TAMBAH//
+const btplus = document.createElement('button')
+btplus.innerHTML = "+"
+btplus.style.transform="translateX(390px)translateY(35px)"
+
+btplus.style.width= "20px"
+btplus.addEventListener("click", function(){
+hargaDiskon4 = Math.max(hargaDiskon4 + 100 , 0)
+
+jumlah4 = jumlah4 + 1
+btmin.innerHTML= jumlah4
+
+
+
+if(hargaDiskon4 < 1 ){
+  alert("PESAN DULU YA KE KERANJANG!")
+
+
+}
+
+
+
+})
+
+// ...//
+
+//button KURANG//
+const btkurang = document.createElement('button')
+btkurang.innerHTML = "-"
+btkurang.style.transform="translateX(460px)translateY(35px)"
+
+btkurang.style.width= "20px"
+
+btkurang.addEventListener("click", function(){
+
+jumlah4 = Math.max(jumlah4 - 1,0)
+
+btmin.innerHTML= jumlah4
+
+
+
+
+
+cartbthapus1 = document.getElementById('cartbthapus4');
+cartpdelete1 = document.getElementById('cartpdelete4');
+
+if(jumlah4 == 0){
+  cartbthapus1.style.display="block"
+  cartpdelete1.style.display="none"
+  div.remove()
+  return kosong4 = 0;
+
+}
+
+
+})
+
+
+// TOMBOL ADD PESAN//
+
+
+//-------///
+
+div.appendChild(btkurang)
+div.appendChild(btplus)
+div.appendChild(div1)
+
+
+div.appendChild(btmin)
+
+wadahpanelcart.appendChild(div)
+
+}
+
+
+//
+
+let cartpdelete6 = document.getElementById('cartpdelete6');
+cartpdelete6.addEventListener("click" , function(){
+  alert("sudah di tambahkan keranjang")
+})
+
+
+
+
+//cartbt6//
+
+
+
+// cartbt7//
+
+let cartpdelete7 = document.getElementById('cartpdelete7').addEventListener("click",()=> alert("sudah di tambah keranjang"))
+
+jumlah7 = 1;
+hargaDiskon7 = 100;
+kosong7=0;
+
+function cartbt7(){
+  
+let gambarmakanan1 = document.getElementById('gambarmakanan1');
+let namamakanan1 = document.getElementById('namamakanan1');
+let hargamakan1 = document.getElementById('hargamakan1');
+let tutupbt = document.getElementById('infotutupyo');
+let cartbthapus1 = document.getElementById('cartbthapus7');
+cartbthapus1.style.display="none"
+let cartpdelete1 = document.getElementById('cartpdelete7');
+cartpdelete1.style.display="block"
+
+let targetinfocart = document.getElementById('targetinfocart').scrollIntoView({behavior:"smooth"});
+alert("berhasil di tambahkan ke keranjang")
+
+
+hargaDiskon7 = hargaDiskon7 + 100
+console.log(`hargadiskon = ${ hargaDiskon7}`)
+
+kosong7 = Math.floor(kosong7 + 1)
+ console.log(kosong4)
+
+
+
+let div = document.createElement('div');
+div.className="classcart";
+
+div.innerHTML = `<p><img src="${gambarmakanan1.src}">`
+
+
+// BUTA WADAH TULISAN NAMA MENU DAN HARGA//
+const div1 = document.createElement('div');
+div1.innerHTML= `
+
+
+<h2>${namamakanan1.innerHTML}</h2>
+<h3>${hargamakan1.innerHTML}</h3>
+</p>
+
+`
+
+//TOMBOL PESAN//
+const btmin = document.createElement('button')
+
+
+
+btmin.innerHTML= 1
+
+
+
+
+//
+
+//TOMBOL TAMBAH//
+const btplus = document.createElement('button')
+btplus.innerHTML = "+"
+btplus.style.transform="translateX(390px)translateY(35px)"
+
+btplus.style.width= "20px"
+btplus.addEventListener("click", function(){
+hargaDiskon7 = Math.max(hargaDiskon7 + 100 , 0)
+
+jumlah7 = jumlah7 + 1
+btmin.innerHTML= jumlah7
+
+
+
+if(hargaDiskon7 < 1 ){
+  alert("PESAN DULU YA KE KERANJANG!")
+
+
+}
+
+
+
+})
+
+// ...//
+
+//button KURANG//
+const btkurang = document.createElement('button')
+btkurang.innerHTML = "-"
+btkurang.style.transform="translateX(460px)translateY(35px)"
+
+btkurang.style.width= "20px"
+
+btkurang.addEventListener("click", function(){
+
+jumlah7 = Math.max(jumlah7  - 1,0)
+
+btmin.innerHTML= jumlah7
+
+
+
+
+
+cartbthapus1 = document.getElementById('cartbthapus7');
+cartpdelete1 = document.getElementById('cartpdelete7');
+
+if(jumlah7 == 0){
+  cartbthapus1.style.display="block"
+  cartpdelete1.style.display="none"
+  div.remove()
+  return kosong7 = 0;
+
+}
+
+
+})
+
+
+// TOMBOL ADD PESAN//
+
+
+//-------///
+
+div.appendChild(btkurang)
+div.appendChild(btplus)
+div.appendChild(div1)
+
+
+div.appendChild(btmin)
+
+wadahpanelcart.appendChild(div)
+}
+
+//cartbt5//
+
+let cartpdelete5 = document.getElementById('cartpdelete5');
+cartpdelete5.addEventListener("click" , ()=> {
+  alert("sudah di tambah keranjang")
+})
+
+jumlah5 = 1;
+hargaDiskon5 = 0;
+kosong5 = 0
+function cartbt5(){
+
+
+let gambarmakanan1 = document.getElementById('gambarmakanan1');
+let namamakanan1 = document.getElementById('namamakanan1');
+let hargamakan1 = document.getElementById('hargamakan1');
+let tutupbt = document.getElementById('infotutupyo');
+let cartbthapus1 = document.getElementById('cartbthapus5');
+cartbthapus1.style.display="none"
+let cartpdelete1 = document.getElementById('cartpdelete5');
+cartpdelete1.style.display="block"
+
+let targetinfocart = document.getElementById('targetinfocart').scrollIntoView({behavior:"smooth"});
+alert("berhasil di tambahkan ke keranjang")
+
+
+hargaDiskon5 = hargaDiskon5 + 100
+console.log(`hargadiskon = ${ hargaDiskon4}`)
+
+kosong5 = Math.floor(kosong5 + 1)
+ console.log(kosong5)
+
+
+
+let div = document.createElement('div');
+div.className="classcart";
+
+div.innerHTML = `<p><img src="${gambarmakanan1.src}">`
+
+
+// BUTA WADAH TULISAN NAMA MENU DAN HARGA//
+const div1 = document.createElement('div');
+div1.innerHTML= `
+
+
+<h2>${namamakanan1.innerHTML}</h2>
+<h3>${hargamakan1.innerHTML}</h3>
+</p>
+
+`
+
+//TOMBOL PESAN//
+const btmin = document.createElement('button')
+
+
+
+btmin.innerHTML= 1
+
+
+
+
+//
+
+//TOMBOL TAMBAH//
+const btplus = document.createElement('button')
+btplus.innerHTML = "+"
+btplus.style.transform="translateX(390px)translateY(35px)"
+
+btplus.style.width= "20px"
+btplus.addEventListener("click", function(){
+hargaDiskon5 = Math.max(hargaDiskon5 + 100 , 0)
+
+jumlah5 = jumlah5 + 1
+btmin.innerHTML= jumlah5
+
+
+
+if(hargaDiskon5 < 1 ){
+  alert("PESAN DULU YA KE KERANJANG!")
+
+
+}
+
+
+
+})
+
+// ...//
+
+//button KURANG//
+const btkurang = document.createElement('button')
+btkurang.innerHTML = "-"
+btkurang.style.transform="translateX(460px)translateY(35px)"
+
+btkurang.style.width= "20px"
+
+btkurang.addEventListener("click", function(){
+
+jumlah5 = Math.max(jumlah5 - 1,0)
+
+btmin.innerHTML= jumlah4
+
+hargaDiskon5 = Math.max(hargaDiskon5 - 100,0)
+kosong5 =  Math.max(kosong5 - 1,0)
+console.log(kosong5)
+
+cartbthapus1 = document.getElementById('cartbthapus5');
+cartpdelete1 = document.getElementById('cartpdelete5');
+
+if(jumlah5 == 0){
+  cartbthapus1.style.display="block"
+  cartpdelete1.style.display="none"
+  div.remove()
+ 
+
+}
+
+
+})
+
+
+// TOMBOL ADD PESAN//
+
+
+//-------///
+
+div.appendChild(btkurang)
+div.appendChild(btplus)
+div.appendChild(div1)
+
+
+div.appendChild(btmin)
+
+wadahpanelcart.appendChild(div)
+
+}
+
+
+
+//cartbt3//
+
+function cartbt3(notetotaluser1){
+
+let gambarmakanan1 = document.getElementById('gambarmakanan1');
+let namamakanan1 = document.getElementById('namamakanan1');
+let hargamakan1 = document.getElementById('hargamakan1');
+let tutupbt = document.getElementById('infotutupyo');
+let cartbthapus1 = document.getElementById('cartbthapus3');
+cartbthapus1.style.display="none"
+let cartpdelete1 = document.getElementById('cartpdelete3');
+cartpdelete1.style.display="block"
+
+let targetinfocart = document.getElementById('targetinfocart').scrollIntoView({behavior:"smooth"});
+alert("berhasil di tambahkan ke keranjang")
+
+
+hargaDiskon3 = hargaDiskon3 + 100
+console.log(`hargadiskon = ${ hargaDiskon}`)
+
+kosong3 = Math.floor(kosong3 + 1)
+ console.log(kosong3)
+
+
+
+let div = document.createElement('div');
+div.className="classcart";
+
+div.innerHTML = `<p><img src="${gambarmakanan1.src}">`
+
+
+// BUTA WADAH TULISAN NAMA MENU DAN HARGA//
+const div1 = document.createElement('div');
+div1.innerHTML= `
+
+
+<h2>${namamakanan1.innerHTML}</h2>
+<h3>${hargamakan1.innerHTML}</h3>
+</p>
+
+`
+
+//TOMBOL PESAN//
+const btmin = document.createElement('button')
+
+
+
+btmin.innerHTML= 1
+
+
+
+
+//
+
+//TOMBOL TAMBAH//
+const btplus = document.createElement('button')
+btplus.innerHTML = "+"
+btplus.style.transform="translateX(390px)translateY(35px)"
+
+btplus.style.width= "20px"
+btplus.addEventListener("click", function(){
+hargaDiskon3 = Math.max(hargaDiskon3 + 100 , 0)
+
+jumlah3 = jumlah3 + 1
+btmin.innerHTML= jumlah3
+
+3
+
+})
+
+// ...//
+
+//button KURANG//
+const btkurang = document.createElement('button')
+btkurang.innerHTML = "-"
+btkurang.style.transform="translateX(460px)translateY(35px)"
+
+btkurang.style.width= "20px"
+
+btkurang.addEventListener("click", function(){
+
+jumlah3 = Math.max(jumlah3 - 1,0)
+
+btmin.innerHTML= jumlah3
+
+hargaDiskon3 = Math.max(hargaDiskon3 - 100,0)
+
+
+cartbthapus1 = document.getElementById('cartbthapus3');
+cartpdelete1 = document.getElementById('cartpdelete3');
+
+if(jumlah3 == 0){
+  cartbthapus1.style.display="block"
+  cartpdelete1.style.display="none"
+  div.remove()
+ 
+
+}
+
+
+})
+
+
+// TOMBOL ADD PESAN//
+
+
+//-------///
+
+div.appendChild(btkurang)
+div.appendChild(btplus)
+div.appendChild(div1)
+
+
+div.appendChild(btmin)
+
+wadahpanelcart.appendChild(div)
+
+}
+
+
+
+
+
+//CARTBT
+
+
+
 
 function cartbt2(){
 
@@ -1547,7 +2317,7 @@ function cartbt2(){
   let cartpdelete = document.getElementById('cartpdelete2');
   cartpdelete.style.display="block"
 
-
+alert("berhasil di tambahkan keranjang")
  hargaDiskon2 = hargaDiskon2 + 100 ;
  console.log(`hargadiskon2 = ${hargaDiskon}` )
 
@@ -1659,26 +2429,43 @@ let cartp = document.getElementById('cartbthapus2');
 
 
 
+//cartbt3 //
+
+//cartbt4
+
+
+
+
+
 // TOMBOL ADDPESANAN CART//
 ////////////////////////////
+
+
+
 
 let output
 
 function tomboltutup(){
+
+let wadahoutput1 = document.getElementById('wadahoutput1');
+let gelombangwa = document.getElementById('gelombangwa');
+gelombangwa.style.display="block"
+
+  let submitwacart1 = document.getElementById('submitwacart1');
+  submitwacart1.style.display="block"
+  totalbelanjacart = hargaDiskon + hargaDiskon2 + hargaDiskon3 + hargaDiskon4 + hargaDiskon5 ;
  
-  totalbelanjacart = hargaDiskon + hargaDiskon2
   
   let output = document.getElementById('output');
+
   output.style.display="block"
-  output.style.transform="translateY(310px)translateX(50px)"
- 
-  
+
  
  
 
 
 
-  hitungDiskoncart()
+
   console.log(`dapat diskon ${getDiskoncart}`)
   if(nama ===""  && alamat === ""  && nomer ===""){
   alert("ISI SEMUA DENGAN LENGKAP")
@@ -1689,20 +2476,23 @@ function tomboltutup(){
   else if(getDiskoncart === 0){
     
     hitungDiskoncart()
-  totalbelanjacart = hargaDiskon + hargaDiskon2
+    totalbelanjacart = hargaDiskon + hargaDiskon2 + hargaDiskon3 + hargaDiskon4 + hargaDiskon5;
+  
+ 
   
     let nama = document.getElementById('nama').value;
     let alamat =document.getElementById('alamat').value;
     let nomer = document.getElementById('nomer').value;
-    let submitwacart1 = document.getElementById('submitwacart1')
+    let submitwacart1 = document.getElementById('submitwacart1');
   
   let hitungHasilDsikon = totalbelanjacart * (getDiskoncart/100);
   let hasilfix = totalbelanjacart  - hitungHasilDsikon; 
 
-  output.innerHTML = `<p> HALOi COSTUMER <span style="color:blue">${nama}</span> TOTAL HARGA ANDA RP.<span style="color:red">${totalbelanjacart}.000</span> BELUM DAPAT DISKON NIH , BELANJA MIN 200k YA! , DAN TOTAL YANG DI BAYARKAN RP.<span style="color:red">${hasilfix}.000</span></p>`
+  output.innerHTML = `<p> HALO COSTUMER <span style="color:blue">${nama}</span> TOTAL HARGA ANDA RP.<span style="color:red">${totalbelanjacart}.000</span> BELUM DAPAT DISKON NIH , BELANJA MIN 200k YA! , DAN TOTAL YANG DI BAYARKAN RP.<span style="color:red">${hasilfix}.000</p>`
   let submit1 = document.getElementById('submit1');
+
   submitwacart1.style.display="block"
-  
+
   
   }
 
@@ -1710,7 +2500,8 @@ function tomboltutup(){
     else{
        
       hitungDiskoncart()
-  totalbelanjacart = hargaDiskon + hargaDiskon2 
+      totalbelanjacart = hargaDiskon + hargaDiskon2 + hargaDiskon3 + hargaDiskon4 + hargaDiskon5 ;
+  
     let nama = document.getElementById('nama').value;
     let alamat =document.getElementById('alamat').value;
     let nomer = document.getElementById('nomer').value;
@@ -1721,7 +2512,7 @@ function tomboltutup(){
 
   output.innerHTML = `<p>halo costumer ${nama}  TOTAL HARGA ANDA RP.${totalbelanjacart}.000 dan dapat diskon ${getDiskoncart}% dan total di bayarkan RP.${hasilfix}.000</p>`
   let submit1 = document.getElementById('submit1');
-  
+  output.style.transform="translateX(210px)translateY(400px)"
 
   submitwacart1.style.display="block"
   
@@ -1776,8 +2567,10 @@ window.open(linkWA, '_blank');
 
 
 
+// x lg pesancart
 function bttutupinfo(){
- 
+   let tombolpesancart = document.getElementById('tombolpesancart');
+   tombolpesancart.style.display="none"
   let wadahpanelcart = document.getElementById('wadahpanelcart');
   wadahpanelcart.style.display="none"
   let tutupbt = document.getElementById('infotutupyo');
@@ -1808,17 +2601,27 @@ function halaman2(){
   let halaman3 = document.getElementById('halamanbt3');
     halaman1.style.backgroundColor ="rgb(227, 227, 168)"
      halaman3.style.backgroundColor ="rgb(227, 227, 168)"
+     window.location.href="about.html"
 }
 
+
+
 function halaman3(){
+  
+let x = Math.floor( Math.random() * 300)
+let y = Math.floor( Math.random() * 300)
+let d = Math.floor( Math.random() * 300)
   let halaman3 = document.getElementById('halamanbt3');
-  halaman3.style.backgroundColor ="orange"
+  halaman3.style.backgroundColor =`rgb(${x},${y},${d})`
   let halaman2 = document.getElementById('halamanbt2');
   let halaman1 = document.getElementById('halamanbt1');
       halaman1.style.backgroundColor ="rgb(227, 227, 168)"
         halaman2.style.backgroundColor="rgb(227, 227, 168)"
 }
 
+let x = Math.floor( Math.random() * 300)
+let y = Math.floor( Math.random() * 300)
+let d = Math.floor( Math.random() * 300)
 
 function starputihbt1() {
   document.getElementById('starkuning1').style.display = "block";
@@ -2227,6 +3030,7 @@ function addTotal(){
       let paneltotalya = document.getElementById('paneltotalya');
       paneltotalya.style.display= "none";
       alert("MINIMAL ORDER 100K DULU YA")
+      gambarmakanan1.scrollIntoView({behavior:"smooth"})
     }
 
     else{
@@ -2331,7 +3135,8 @@ else{
 
 
 getDiskoncart = 0;
-let totalbelanjacart = hargaDiskon + hargaDiskon2
+totalbelanjacart = hargaDiskon + hargaDiskon2 + hargaDiskon3 + hargaDiskon4 + hargaDiskon5;
+  
 function hitungDiskoncart(){
   if(totalbelanjacart >=1000){
     getDiskoncart = 55;
